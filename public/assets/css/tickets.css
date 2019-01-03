@@ -1,0 +1,40 @@
+body{
+    background-image: url("/assets/images/allticketsbg.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+#page-title{
+    font-weight: 800;
+    font-size: 80px;
+    color: black;
+    text-shadow: 0 1px 8px rgb(255, 255, 255);
+    padding: 5px;
+}
+#header{
+    background-color: rgb(90, 0, 0);
+    border: 1px solid black;
+    color: rgb(126, 126, 126);
+}
+#job-title{
+    font-size: 20px;
+    font-weight: 900;
+    color: white;
+}
+#collapsible-body{
+    border: 1px solid black;
+    background-color: rgb(90, 0, 0);
+}
+#label{
+    font-weight: 500;
+    font-size: 25px;
+    color: white;
+}
+#disabled{
+    color: rgb(177, 177, 177);
+}
+#follow-title{
+    font-weight: 800;
+    font-size: 30px;
+    color: white;
+}

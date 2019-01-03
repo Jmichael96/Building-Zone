@@ -1,0 +1,216 @@
+<head>
+    <!-- css link -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/invoice.css">
+</head>
+<!--Intro Section-->
+<section class="row center-align">
+
+    <div class="col s12 m4 l2"></div>
+
+    <form action="invoice" method="POST" class="col s12 m4 l8 center-align">
+        <p id="form-title">INVOICE</p>
+        <hr />
+        <div class="row">
+            <!-- datepicker -->
+            <div id="datepicker" class="col s4">
+                <input id="invoice-date" placeholder="Date" name="date" type="text" class="datepicker black-text">
+            </div>
+        </div>
+        <div class="row center-align">
+            <!-- invoice number -->
+            <div class="input-field col s4">
+                <input value="" id="invoice" type="text" name="invoice_num" class="validate" placeholder="">
+                <label class="active black-text" for="invoice">Invoice #</label>
+            </div>
+            <!-- Company name -->
+            <div class="input-field col s4 ">
+                <input id="company" type="text" name="company" class="validate" placeholder="">
+                <label class="active black-text" for="company">Company: </label>
+            </div>
+            <!-- Bill to who -->
+            <div class="input-field col s4 left">
+                <input value="" id="bill-to" type="text" name="bill_to" class="validate" placeholder="">
+                <label class="active black-text" for="bill-to">Bill To</label>
+            </div>
+        </div>
+        <div class="row center-align">
+            
+        </div>
+        <div class="row">
+            <!-- job description -->
+            <div class="input-field col s12">
+                <textarea id="job-desc" class="validate" name="job_desc" placeholder="" rows="5"></textarea>
+                <label class="" for="job-desc">Job Description</label>
+            </div>
+        </div>
+        <div class="row">
+            <!-- job description -->
+            <div class="input-field col s4">
+                <input id="materials-used" type="text" name="materials_used" class="validate" placeholder="">
+                <label class="active black-text" for="materials-used">Materials Used</label>
+            </div>
+            <div class="input-field col s4">
+                <input id="equipment-used" type="text" name="equipment_used" class="validate" placeholder="">
+                <label class="active black-text" for="equipment-used">Equipment Used</label>
+            </div>
+            <div class="input-field col s4">
+                <input id="days-on-job" type="text" name="days_on_job" class="validate" placeholder="">
+                <label class="active black-text" for="days-on-job">Days On Site</label>
+            </div>
+        </div>
+        <!-- LIST OF ITEMS - QTY - PRICE -->
+        <div class="row">
+            <div class="input-field col s2 ">
+                <input value="" id="job-item1" type="text" name="item_1" class="validate" placeholder="">
+                <label class="active black-text" for="job-item1">Job Items</label>
+            </div>
+            <div class="input-field col s2 ">
+                <input value="" id="qty-1" type="text" name="qty_1" class="validate" placeholder="">
+                <label class="active black-text " for="qty-1">Qty Bought</label>
+            </div>
+            <div class="input-field col s2 ">
+                <input value="" id="price-1" type="text" name="price_1" class="validate" placeholder="">
+                <label class="active black-text " for="price-1">Price Per</label>
+            </div>
+            <div class="input-field col s2 ">
+                <input value="" id="job-item2" type="text" name="item_2" class="validate" placeholder="">
+                <label class="active black-text" for="job-item2">Job Items</label>
+            </div>
+            <div class="input-field col s2 ">
+                <input value="" id="qty-2" type="text" name="qty_2" class="validate" placeholder="">
+                <label class="active black-text" for="qty-2">Qty Bought</label>
+            </div>
+            <div class="input-field col s2 ">
+                <input value="" id="price-2" type="text" name="price_2" class="validate" placeholder="">
+                <label class="active black-text" for="price-2">Price Per</label>
+            </div>
+        </div>
+        <!-- COLUMN -->
+        <div class="row">
+            <div class="input-field col s2 ">
+                <input value="" id="job-item3" type="text" name="item_3" class="validate" placeholder="">
+                <label class="active black-text" for="job-item3">Job Items</label>
+            </div>
+            <div class="input-field col s2 ">
+                <input value="" id="qty-3" type="text" name="qty_3" class="validate" placeholder="">
+                <label class="active black-text" for="qty-3">Qty Bought</label>
+            </div>
+            <div class="input-field col s2 ">
+                <input value="" id="price-3" type="text" name="price_3" class="validate" placeholder="">
+                <label class="active black-text" for="price-3">Price Per</label>
+            </div>
+            <div class="input-field col s2 ">
+                <input value="" id="job-item4" type="text" name="item_4" class="validate" placeholder="">
+                <label class="active black-text" for="job-item4">Job Items</label>
+            </div>
+            <div class="input-field col s2 ">
+                <input value="" id="qty4" type="text" name="qty_4" class="validate" placeholder="">
+                <label class="active black-text" for="qty-4">Qty Bought</label>
+            </div>
+            <div class="input-field col s2 ">
+                <input value="" id="price-4" type="text" name="price_4" class="validate" placeholder="">
+                <label class="active black-text" for="price-4">Price Per</label>
+            </div>
+        </div>
+        <!-- COLUMN -->
+        <div class="row">
+            <div class="input-field col s2 ">
+                <input value="" id="job-item5" type="text" name="item_5" class="validate" placeholder="">
+                <label class="active black-text" for="job-item5">Job Items</label>
+            </div>
+            <div class="input-field col s2 ">
+                <input value="" id="qty-5" type="text" name="qty_5" class="validate" placeholder="">
+                <label class="active black-text" for="qty-5">Qty Bought</label>
+            </div>
+            <div class="input-field col s2 ">
+                <input value="" id="price-5" type="text" name="price_5" class="validate" placeholder="">
+                <label class="active black-text" for="price-5">Price Per</label>
+            </div>
+            <div class="input-field col s2 ">
+                <input value="" id="job-item6" type="text" name="item_6" class="validate" placeholder="">
+                <label class="active black-text" for="job-item6">Job Items</label>
+            </div>
+            <div class="input-field col s2 ">
+                <input value="" id="qty-6" type="text" name="qty_6" class="validate" placeholder="">
+                <label class="active black-text" for="qty-6">Qty Bought</label>
+            </div>
+            <div class="input-field col s2 ">
+                <input value="" id="price-6" type="text" name="price_6" class="validate" placeholder="">
+                <label class="active black-text" for="price-6">Price Per</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="other-items" class="validate" name="other_job_items" placeholder="Schedule 40 two inch couplings, qty 4, $3.75" rows="5"></textarea>
+                <label class="black-text" for="other_items">Other Job Items</label>
+            </div>
+        </div>
+        <hr />
+        <!-- FINALIZING WITH TOTAL $ PO AND MUD DISTRICT -->
+        <div class="row">
+            <div class="input-field col s4 ">
+                <input value="" id="total-item-price" name="total_item_price" type="text" class="validate" placeholder="">
+                <label class="active black-text" for="total-item-price">Total Item Price</label>
+            </div>
+            <div class="input-field col s4 ">
+                <input id="po-num" type="text" name="po_num" class="validate" placeholder="">
+                <label class="active black-text" for="po-num">PO #</label>
+            </div>
+            <div class="input-field col s4 ">
+                <input value="" id="mud-district" name="mud_district" type="text" class="validate" placeholder="">
+                <label class="active black-text" for="mud-district">MUD District</label>
+            </div>
+        </div>
+        <!--  -->
+        <div class="row">
+            <div class="input-field col s4">
+                <input value="" id="payment-terms" name="terms" type="text" class="validate" placeholder="Due On Reciept">
+                <label class="active black-text" for="payment-terms">Terms of Payment</label>
+            </div>
+            <div class="input-field col s3">
+                <input value="" id="sub-total" name="sub_total" type="text" class="validate" placeholder="">
+                <label class="active black-text " for="sub-total">Sub Total</label>
+            </div>
+            <div class="input-field col s3">
+                <input value="" id="tax" type="text" name="tax" class="validate" placeholder="">
+                <label class="active black-text" for="tax">Tax</label>
+            </div>
+        </div>
+        <div class="row">
+            <!-- total sum -->
+            <div class="input-field col s4 ">
+                <input value="" id="total-hours" name="total_hours" type="text" class="validate" placeholder="">
+                <label class="active black-text" for="total-hours">Total Hours</label>
+            </div>
+            <!-- total sum -->
+            <div class="input-field col s4 ">
+                <input value="" id="total-due" name="total_due" type="text" class="validate" placeholder="">
+                <label class="active black-text" for="total-due">Total Due</label>
+            </div>
+            <!-- buttons for the invoice -->
+            
+        </div>
+        <button id="submit-invoice" class="btn green accent-2 z-depth-5">
+                    Submit
+                    <i class="material-icons">send</i>
+                </button>
+    </form>
+    <div class="col s12 m4 l2"></div>
+    
+</section>
+<div class="row center-align">
+                <a id="addItem" id="btn" class="btn blue accent-3 z-depth-5">
+                    Add Job Item
+                </a>
+                <a id="btn" class="btn blue accent-3 center-align z-depth-5">Share</a>
+
+                <a id="btn" id="submit-invoice" class="btn green accent-2 z-depth-5">
+                    Submit
+                    <i class="material-icons">send</i>
+                </a>
+                <a id="btn" href="/invoice" class="btn-floating red z-depth-5">
+                    <i class="material-icons">clear</i>
+                </a>
+            </div>
+{{!-- js link --}}
+<script type="text/javascript" src="/assets/js/createInvoice.js"></script>

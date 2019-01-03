@@ -1,0 +1,56 @@
+body{
+    background-image: url("/assets/images/alllogsbg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+#page-title{
+    font-weight: 800;
+    font-size: 80px;
+    color: black;
+    text-shadow: 0 1px 8px rgb(255, 255, 255);
+    padding: 5px;
+}
+#collapsible{
+    background-color: rgb(41, 41, 41);
+    border: 1px solid black;
+}
+#date{
+    font-size: 13px;
+    color: black;
+    font-weight: 400;
+}
+#header{
+    background-color: rgb(90, 0, 0);
+    color: rgb(126, 126, 126);
+}
+#collapsible-body{
+    background-color: rgb(90, 0, 0);
+    border: 1px solid black;
+    color: white;
+}
+#job-title{
+    font-size: 20px;
+    font-weight: 900;
+    color: white;
+}
+#company{
+    font-size: 25px;
+    color: white;
+    font-weight: 800;
+}
+#description{
+    font-size: 25px;
+    color: white;
+    font-weight: 800
+}
+#hours{
+    font-size: 25px;
+    color: white;
+    font-weight: 800;
+}
+#employees{
+    font-size: 25px;
+    color: white;
+    font-weight: 800;
+}

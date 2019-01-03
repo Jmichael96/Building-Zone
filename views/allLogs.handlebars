@@ -1,0 +1,34 @@
+<head>
+    <link rel="stylesheet" href="/assets/css/logs.css">
+</head>
+<div class="container">
+<p id="page-title" class="center-align">ALL LOGS</p>
+</div>
+{{#each Daily_Log}}
+<div id="section" class="row">
+    <div class="col s12 m4 l3"></div>
+        <ul id="collapsible" class="collapsible col s12 m4 l6">
+            <li>
+                <div id="header" class="collapsible-header row ">
+                    <p class="col" ><u id="job-title">{{job_title}}:</u> {{date}}</p>
+                </div>
+                <div id="collapsible-body" class="collapsible-body">
+                    <span>
+                        <p><b id="company">COMPANY:</b> {{company}}</p>
+                        <hr />
+                        <p><b id="description">DESCRIPTION:</b> {{job_desc}}</p>
+                        <hr />
+                        <p><b id="hours">HOURS WORKED:</b> {{hours}}</p>
+                        <hr />
+                        <p><b id="employees">EMPLOYEES:</b> {{employees}}</p>
+                    </span>
+                </div>
+            </li>
+        </ul>
+    <div class="col s12 m4 l3"></div>
+</div>
+{{/each}}
+
+
+
+<script type="text/javascript" src="/assets/js/logs.js"></script>

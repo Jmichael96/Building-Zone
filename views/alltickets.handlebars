@@ -1,0 +1,105 @@
+<head>
+    <link rel="stylesheet" href="/assets/css/tickets.css">
+</head>
+
+<div class="container">
+    <p id="page-title" class="center-align">ALL TICKETS</p>
+</div>
+{{#each Ticket}}
+<div id="section" class="row">
+    <div class="col s12 m4 l3"></div>
+    <ul id="collapsible" class="collapsible popout col s12 m4 l6">
+        <li>
+            <div id="header" class="collapsible-header row ">
+                <p class="col">
+                    <u id="job-title">{{job_title}}:</u> {{date}}</p>
+            </div>
+            <div id="collapsible-body" class="collapsible-body">
+                <span>
+                    <p id="list-title" class="center-align"></p>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input disabled value="{{company}}" id="disabled" type="text" class="validate">
+                            <label id="label" for="disabled">COMPANY NAME</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input disabled value="{{address}}" id="disabled" type="text" class="validate">
+                            <label id="label" for="disabled">ADDRESS</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input disabled value="{{job_desc}}" id="disabled" type="text" class="validate">
+                            <label id="label" for="disabled">DESCRIPTION</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input disabled value="{{materials_used}}" id="disabled" type="text" class="validate">
+                            <label id="label" for="disabled">MATERIALS</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input disabled value="{{equipment_used}}" id="disabled" type="text" class="validate">
+                            <label id="label" for="disabled">EQUIPMENT USED</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input disabled value="{{equipment_rented}}" id="disabled" type="text" class="validate">
+                            <label id="label" for="disabled">RENTED EQUIPMENT</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input disabled value="{{hours}}" id="disabled" type="text" class="validate">
+                            <label id="label" for="disabled">HOURS WORKED</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input disabled value="{{employees}}" id="disabled" type="text" class="validate">
+                            <label id="label" for="disabled">EMPLOYEES ON SITE</label>
+                        </div>
+                    </div>
+                    <hr />
+                    <p id="follow-title" class="center-align">FOLLOW UP</p>
+                    <hr />
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input disabled value="{{follow_job_desc}}" id="disabled" type="text" class="validate">
+                            <label id="label" for="disabled">DESCRIPTION</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input disabled value="{{follow_materials}}" id="disabled" type="text" class="validate">
+                            <label id="label" for="disabled">MATERIALS NEEDED</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input disabled value="{{follow_equipment_needed}}" id="disabled" type="text" class="validate">
+                            <label id="label" for="disabled">EQUIPMENT NEEDED</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input disabled value="{{follow_hours_worked}}" id="disabled" type="text" class="validate">
+                            <label id="label" for="disabled">HOURS WORKED</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input disabled value="{{total_hours}}" id="disabled" type="text" class="validate">
+                            <label id="label" for="disabled">TOTAL HOURS WORKED</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input disabled value="{{invoice_number}}" id="disabled" type="text" class="validate">
+                            <label id="label" for="disabled">INVOICE NUMBER</label>
+                        </div>
+                    </div>
+                </span>
+            </div>
+        </li>
+    </ul>
+    <div class="col s12 m4 l3"></div>
+</div>
+{{/each}}
+
+<script type="text/javascript" src="/assets/js/alltickets.js"></script>
