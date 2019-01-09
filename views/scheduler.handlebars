@@ -1,0 +1,96 @@
+<head>
+    <link rel="stylesheet" href="/assets/css/scheduler.css">
+</head>
+<!-- Navigation & Intro -->
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+            <button id="nav-btn" class="btn sidenav-trigger " data-target="slide-out">menu</button>
+            <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownSearch">
+                Search
+            </button>
+            <ul class="right">
+                <img id="logo-img" src="/assets/images/blade.jpg">
+            </ul>
+        </div>
+    </nav>
+</div>
+{{!-- searchbar options --}}
+<ul id='dropdownSearch' class='dropdown-content'>
+    <li>
+        <a id="search-item" class="" href="">Logs</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Lists</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Tickets</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Invoices</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Help</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">About Us</a>
+    </li>
+</ul>
+<!-- Navbar -->
+
+<div class="container" id="form">
+    <div class="row">
+        <form action="schedule" method="POST">
+            <p id="title" class="center">Scheduler</p>
+            <hr />
+            <!-- datepicker -->
+            <div id="datepicker" class="col s5">
+                <input id="from-date" placeholder="Date" name="from_date" type="text" class="datepicker">
+            </div>
+            <div class="input-field col s1">
+                <input disabled value="TO" class="white-text" id="invoice" type="text" name="" class="validate" placeholder="">
+            </div>
+            <div id="datepicker" class="col s5">
+                <input id="to-date" placeholder="Date" name="to_date" type="text" class="datepicker">
+            </div>
+            <div class="row">
+                <!-- description -->
+                <div class="input-field col s12">
+                    <textarea id="job-desc" class="validate" name="description" placeholder="" rows="5"></textarea>
+                    <label class="white-text" for="job-desc">Description</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="center-algin col s3">
+                    <p class="white-text">Would like to be notified?</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"></div>
+                <!-- Switch -->
+                <div class="switch">
+                    <label>
+                        no
+                        <input type="checkbox" name="notify">
+                        <span class="lever"></span>
+                        yes
+                    </label>
+                </div>
+            </div>
+        <button type="submit" id="submit-schedule" class="btn z-depth-5">SAVE</button>
+        {{!-- <a id="addItem" id="btn" class="btn z-depth-5">
+            Add Job Item
+        </a> --}}
+        <a id="share-schedule" class="btn center-align z-depth-5">Share</a>
+        <button id="cancel-btn" href="/scheduler" class="btn modal-close ">Cancel</button>
+        </form>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="/assets/js/calendar.js"></script>

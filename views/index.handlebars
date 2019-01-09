@@ -1,427 +1,144 @@
 <head>
     <link rel="stylesheet" href="/assets/css/main.css">
 </head>
-<header>
-    <!--Intro Section-->
-    <section class="view intro-2">
-        <div class="mask rgba-gradient-1">
-            <div class="container valign-wrapper">
-                <h1 class="center-align" id='intro-quote'>
-                    THE ROAD TO SUCCESS IS ALWAYS UNDER CONSTRUCTION</h1>
-            </div>
+    <!-- Navigation & Intro -->
+    <div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+            <button id="nav-btn" class="btn sidenav-trigger " data-target="slide-out">menu</button>
+            <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownSearch">
+                Search
+            </button>   
+            <ul class="right">
+                <img id="logo-img" src="/assets/images/blade.jpg">
+            </ul>
         </div>
-    </section>
+    </nav>
+    </div>
+    {{!-- searchbar options --}}
+    <ul id='dropdownSearch' class='dropdown-content'>
+                        <li>
+                            <a id="search-item" class="" href="">Logs</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">Lists</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">Tickets</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">Invoices</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">Help</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">About Us</a>
+                        </li>
+                    </ul>
+    <!-- Navbar -->
+<header>
+    <div class="container valign-wrapper">
+        <div class="row">
+            <div class="col s2 m2 l1"></div>
+            <h1 class="center-align col s8 m8 l10" id='intro-quote'>
+                THE ROAD TO SUCCESS IS ALWAYS UNDER CONSTRUCTION</h1>
+            <div class="col s2 m2 l1"></div>
+        </div>
+    </div>
 </header>
 
 <!-- Main content -->
 <main>
     <!-- Streak -->
     <div id="mid-bg">
-        <!-- container -->
-        <div class="container">
-            <!-- row for cards -->
             <div class="row center-align">
-                <!-- Grid one -->
-                <div class="col">
-                    <div id='card' class="card">
-                        <div class="card-content center-align">
-                            <span class="card-title">DAILY LOGS</span>
-                            <hr />
-                            <p>Document your daily jobs with this feature</p>
-                        </div>
-                        <br>
-                        <div class="card-action">
-                            <a class="modal-trigger btn" href="#logModal">Create</a>
-                            <a href="/alllogs" class="btn">All</a>
-                        </div>
-                        <!-- Modal Structure -->
-                        <div id="logModal" class="modal modal-fixed-footer">
-                            <div class="modal-content">
-                                <p id="modal-title" class="center-align">Daily Log</p>
-                                <hr />
-                                <form action="log" method="POST">
-                                    <div class="row">
-                                        <!-- date picker -->
-                                        <div class="input-field col s4">
-                                            <input id="log-date" type="date" name="date" class="logDatePicker">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <!-- job title -->
-                                        <div class="input-field col s6">
-                                            <input value="" id="job-title" type="text" name="job_title" class="validate">
-                                            <label class="active" for="job-title">Job Title</label>
-                                        </div>
-                                        <!-- Company name -->
-                                        <div class="input-field col s6">
-                                            <input value="" id="company-name" name="company" type="text" class="validate">
-                                            <label class="active" for="company-name">Company Name</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <textarea id="job-desc" name="job_desc" class="materialize-textarea" data-length="120"></textarea>
-                                            <label for="job-desc">Job Description</label>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input type="text" name="hours" id="hours-worked"></input>
-                                            <label for="hours-worked">Hours worked</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <!-- number of employes or names -->
-                                        <div class="input-field col s6">
-                                            <input id="employee-input" name="employees" type="text">
-                                            <label for="employee-input">Names or Number of employees</label>
-                                        </div>
-
-                                        <!-- upload picture -->
-                                        <div class="col s6">
-                                            <div class="file-field input-field">
-                                                <div id="file-btn" class="btn">
-                                                    <span>File</span>
-                                                    <input type="file" multiple>
-                                                </div>
-                                                <div class="file-path-wrapper">
-                                                    <input class="file-path validate" type="text" placeholder="Upload one or more files">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button id="submit-log" class="btn submit pulse">Submit
-                                        <i class="material-icons right">send</i>
-                                    </button>
-                                </form>
-                            </div>
-                            <div id="modal-footer" class="modal-footer">
-
-                                <button id="share-log" href="" class="btn share center-align">Share</button>
-                                <button id="cancel-btn" href="#!" class="btn modal-close ">Cancel</button>
-                            </div>
-                        </div>
-                        <!-- end modal -->
-                    </div>
-                    <!-- end card -->
-                </div>
-                <!-- end grid one -->
-                <!-- Grid two -->
-                <div class="col">
-                    <div id='card' class="card">
-                        <div class="card-content center-align">
-                            <span class="card-title">LOCATES</span>
-                            <hr />
-                            <p>Directed to the website to call in locates</p>
-                        </div>
-                        <br>
-                        <div class="card-action">
-                            <a class="btn" href="">Create</a>
-                            <a class="btn">All</a>
-                        </div>
+                <div id="item" class="col s4">
+                    <i class="large material-icons">assignment</i>
+                    <p class="center-align">Daily Log</p>
+                    <div class="row">
+                        <a class="modal-trigger btn" href="/daily_log">Create</a>
+                        <a href="/alllogs" class="btn">All</a>
                     </div>
                 </div>
-                <!-- end grid  -->
-                <!-- Grid three To Do List -->
-                <div class="col">
-                    <div id='card' class="card">
-                        <div class="card-content center-align">
-                            <span class="card-title">VALVE RECORDS</span>
-                            <hr />
-                            <p>Displays most recent vale records</p>
-                        </div>
-                        <br>
-                        <div class="card-action">
-                            <a class="btn" href="">Create</a>
-                            <a class="btn">All</a>
-                        </div>
+                <div id="item" class="col s4">
+                    <i class="large material-icons">location_on</i>
+                    <p class="center-align">Locates</p>
+                    <div class="row">
+                        <a class="btn" href="">Create</a>
+                        <a class="btn">All</a>
                     </div>
                 </div>
-                <!-- end grid  -->
-                <!-- Grid four -->
-                <div class="col">
-                    <div id='card' class="card">
-                        <div class="card-content center-align">
-                            <span class="card-title">TO-DO LIST</span>
-                            <hr />
-                            <p>Create a To-Do list each day for your plans</p>
-                        </div>
-                        <br>
-                        <div class="card-action">
-                            <a class="modal-trigger btn" href="#toDoModal">CREATE</a>
-                            <a class="btn" href="/alllists">ALL</a>
-                        </div>
-                        <!-- Modal Structure -->
-                        <div id="toDoModal" class="modal modal-fixed-footer">
-                            <div class="modal-content">
-                                <p id="modal-title">My To Do list</p>
-                                <hr />
-                                <form action="list" method="POST">
-                                    <div class="row">
-                                        <!-- name -->
-                                        <div class="input-field col s6">
-                                            <input id="list-name" type="text" name="name" class="validate">
-                                            <label class="active" for="list-name">Name</label>
-                                        </div>
-                                        <!-- date picker -->
-                                        <div class="input-field col s6">
-                                            <input id="list-date" type="date" name="date" class="toDoDatepicker">
-                                        </div>
-                                    </div>
-                                    <!-- end row -->
-                                    <!-- check list row -->
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <input id="list-1" type="text" name="list_1" data-length="30">
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="list-2" type="text" name="list_2" data-length="30">
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="list-3" type="text" name="list_3" data-length="30">
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="list-4" type="text" name="list_4" data-length="30">
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="list-5" type="text" name="list_5" data-length="30">
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="list-6" type="text" name="list_6" data-length="30">
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="list-7" type="text" name="list_7" data-length="30">
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="list-8" type="text" name="list_8" data-length="30">
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="list-9" type="text" name="list_9" data-length="30">
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="list-10" type="text" name="list_10" data-length="30">
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="list-11" type="text" name="list_11" data-length="30">
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="list-12" type="text" name="list_12" data-length="30">
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="list-13" type="text" name="list_13" data-length="30">
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="list-14" type="text" name="list_14" data-length="30">
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="list-15" type="text" name="list_15" data-length="30">
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="list-16" type="text" name="list_16" data-length="30">
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="list-17" type="text" name="list_17" data-length="30">
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="list-18" type="text" name="list_18" data-length="30">
-                                        </div>
-
-                                    </div>
-                                    <!-- end checklist -->
-                                    <button id="submit-list" class="btn submit pulse">Submit
-                                        <i class="material-icons right">send</i>
-                                    </button>
-                                </form>
-                            </div>
-                            <div id="modal-footer" class="modal-footer">
-                                <a id="addItem" href="#!" class="btn-floating ">
-                                    <i class="material-icons">add</i>
-                                </a>
-
-                                <button id="share-list" href="" class="btn share center-align">Share</button>
-                                <button id="cancel-btn" href="#!" class="btn modal-close ">Cancel</button>
-                            </div>
-                        </div>
-                        <!-- end modal -->
-                    </div>
-                    {{!-- end card --}}
-                </div>
-            </div>
-            <!-- end row -->
-            <div class="row center-align">
-                <!-- Grid one -->
-                <div class="col">
-                    <div id='card' class="card">
-                        <div class="card-content center-align">
-                            <span class="card-title">INVOICE</span>
-                            <hr />
-                            <p>Create an invoice for billing</p>
-                        </div>
-                        <br>
-                        <div class="card-action">
-                            <a class="btn" href="/invoice">CREATE</a>
-                            <a class="btn">ALL</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- end card -->
-
-                <!-- end grid one -->
-                <!-- CARD START TICKET FORM -->
-                <div class="col">
-                    <div id='card' class="card">
-                        <div class="card-content center-align">
-                            <span class="card-title">TICKET FORMS</span>
-                            <hr />
-                            <p>Create a ticket for the job</p>
-                        </div>
-                        <br>
-                        <div class="card-action">
-                            <a class="modal-trigger btn" href="#ticket-modal">CREATE</a>
-                            <a class="modal-trigger btn" href="/alltickets">ALL</a>
-                        </div>
-                        <!-- Modal Structure -->
-                        <div id="ticket-modal" class="modal modal-fixed-footer">
-                            <div class="modal-content">
-                                <p id="modal-title">Ticket Form</p>
-                                <form action="/ticket" method="POST">
-                                    <div class="row">
-                                        <!-- date picker -->
-                                        <div class="input-field col s6">
-                                            <input id="ticket-date" type="date" name="date" class="ticketDatePicker">
-                                        </div>
-                                        <!-- Company name -->
-                                        <div class="input-field col s6">
-                                            <input value="" id="ticket-company-name" name="company" type="text" class="validate">
-                                            <label class="active" for="ticket-company-name">Company Name</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <!-- job title -->
-                                        <div class="input-field col s6">
-                                            <input value="" id="ticket-job-title" name="job_title" type="text" class="validate">
-                                            <label class="active" for="ticket-job-title">Job Title</label>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input type="text" class="form-input" name="address" id="ticket-address" placeholder="1823 Air Born Dr, Katy Tx" />
-                                            <label class="active" for="ticket-address">Address</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <textarea id="ticket-job-description" name="job_desc" class="materialize-textarea"></textarea>
-                                            <label for="ticket-job-description">Job Description</label>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <textarea id="ticket-materials" name="materials_used" class="materialize-textarea"></textarea>
-                                            <label for="ticket-materials">Materials Used</label>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <textarea id="ticket-equipment-used" name="equipment_used" class="materialize-textarea"></textarea>
-                                            <label for="ticket-equipment-used">Equipment Used</label>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <textarea id="ticket-equipment-rented" name="equipment_rented" class="materialize-textarea"></textarea>
-                                            <label for="ticket-equipment-rented">Equipment Rented</label>
-                                        </div>
-                                        <!-- how many hours worked -->
-                                        <div class="input-field col s6">
-                                            <input id="ticket-hours" name="hours" type="text">
-                                            <label for="ticket-hours">Hours Worked</label>
-                                        </div>
-                                        <!-- number of employes or names -->
-                                        <div class="input-field col s6">
-                                            <input id="ticket-employees" name="employees" type="text">
-                                            <label for="ticket-employees">Names or Number of employees</label>
-                                        </div>
-                                    </div>
-                                    <!-- follow up needed in form -->
-                                    <div id="modal-break">
-                                        <hr id="modal-break">
-                                        <p id="modal-title">Follow Up Needed</p>
-                                        <hr>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <textarea id="follow-up-description" name="follow_job_desc" class="materialize-textarea"></textarea>
-                                            <label for="follow-up-description">Job Description</label>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <textarea id="follow-up-materials" name="follow_materials" class="materialize-textarea"></textarea>
-                                            <label for="follow-up-materials">Materials Needed</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <textarea id="follow-equipment-needed" name="follow_equipment_needed" class="materialize-textarea"></textarea>
-                                            <label for="follow-equipment-needed">Equipment Needed</label>
-                                        </div>
-                                        <!-- how many hours worked -->
-                                        <div class="input-field col s6">
-                                            <input id="follow-up-hours" name="follow_hours_worked" type="text">
-                                            <label for="follow-up-hours">Hours worked</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <textarea id="total-hours" name="total_hours" class="materialize-textarea"></textarea>
-                                            <label for="total-hours">Total Hours Worked</label>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <textarea id="invoice-number" name="invoice_number" class="materialize-textarea"></textarea>
-                                            <label for="invoice-number">Invoice number</label>
-                                        </div>
-                                    </div>
-                                    <button id="submit-ticket" class="btn submit pulse">Submit
-                                    <i class="material-icons right">send</i>
-                                </button>
-                                </form>
-                            </div>
-                            <div id="modal-footer" class="modal-footer">
-                                
-                                <button id="share-ticket" href="" class="btn share center-align">Share</button>
-                                <button id="cancel-btn" href="#!" class="btn modal-close ">Cancel</button>
-                            </div>
-                        </div>
-                        <!-- end modal -->
-                    </div>
-                </div>
-                <!-- Grid three To Do List -->
-                <div class="col">
-                    <div id='card' class="card">
-                        <div class="card-content center-align">
-                            <span class="card-title activator">BLUE PRINTS</span>
-                            <hr />
-                            <p>
-                            </p>
-                        </div>
-                        <br>
-                        <div class="card-action">
-                            <a class="btn" href="#">REVIEW</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Grid four -->
-                <div class="col">
-                    <div id='card' class="card">
-                        <div class="card-content center-align">
-                            <span class="card-title activator">Documents</span>
-                            <hr />
-                            <p></p>
-                        </div>
-                        <br>
-                        <div class="card-action">
-                            <a class="btn" href="#">REVIEW</a>
-                        </div>
+                <div id="item" class="col s4">
+                    <i class="large material-icons">transform</i>
+                    <p class="center-align">Valve Records</p>
+                    <div class="row">
+                        <a class="btn" href="">Create</a>
+                        <a class="btn">All</a>
                     </div>
                 </div>
             </div>
-            <!-- end row -->
+            <div class="row center-align">
+                <div id="item" class="col s4">
+                    <i class="large material-icons">assignment_turned_in</i>
+                    <p class="center-align">To-Do List</p>
+                    <div class="row">
+                        <a class="modal-trigger btn" href="/list">CREATE</a>
+                        <a class="btn" href="/alllists">ALL</a>
+                    </div>
+                </div>
+                <div id="item" class="col s4">
+                    <i class="large material-icons">personal_video</i>
+                    <p class="center-align">Invoice</p>
+                    <div class="row">
+                        <a class="btn" href="/invoice">CREATE</a>
+                        <a href="/allinvoices" class="btn">ALL</a>
+                    </div>
+                </div>
+                <div id="item" class="col s4">
+                    <i class="large material-icons">inbox</i>
+                    <p class="center-align">Ticket</p>
+                    <div class="row">
+                        <a class="modal-trigger btn" href="/ticket">CREATE</a>
+                        <a class="modal-trigger btn" href="/alltickets">ALL</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row center-align">
+                <div id="item" class="col s4">
+                    <i class="large material-icons">domain</i>
+                    <p class="center-align">Blueprints</p>
+                    <div class="row">
+                        <a class="btn" href="#">REVIEW</a>
+                    </div>
+                </div>
+                <div id="item" class="col s4">
+                    <i class="large material-icons">tune</i>
+                    <p class="center-align">Documents</p>
+                    <div class="row">
+                        <a class="btn" href="#">REVIEW</a>
+                    </div>
+                </div>
+                <div id="item" class="col s4">
+                    <i class="large material-icons">date_range</i>
+                    <p class="center-align">Calendar</p>
+                    <div class="row">
+                        <a class="modal-trigger btn" href="/scheduler">CREATE</a>
+                        <a class="modal-trigger btn" href="/allschedules">ALL</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- end container -->
     </div>
 </main>
 <!-- DONT TOUCH THIS SHIT -->
 <!-- Section: Contact v.2 -->
-<section id="contact" class="container">
+<section id="contact-section" class="container">
     <!-- Section heading -->
     <p id="contact-title" class="center-align">
         <u>CONTACT US</u>

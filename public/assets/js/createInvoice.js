@@ -38,51 +38,51 @@ $(document).ready(function () {
             .append(nodeNames.join(""))
             .appendTo($list_append);
     });
-    // ajax call to input data to database
-    $(document).on("click", "#submit-invoice", function(){
-        $.ajax({
-                method: "post",
-                url: "/invoice",
-                data:{
-                      date: $("#invoice-date").val(),
-                      invoice_num: $("#invoice").val(),
-                      company: $("#company").val(),
-                      bill_to: $("#bill-to").val(),
-                      job_desc: $("#job-desc").val(),
-                      materials_used: $("#materials-used").val(),
-                      equipment_used: $("#equipment-used").val(),
-                      days_on_job: $("#days-on-job").val(),
-                      item_1: $("#job-item1").val(),
-                      qty_1: $("#qty-1").val(),
-                      price_1: $("#price-1").val(),
-                      item_2: $("#job-item2").val(),
-                      qty_2: $("#qty-2").val(),
-                      price_2: $("#price-2").val(),
-                      item_3: $("#job-item3").val(),
-                      qty_3: $("#qty-3").val(),
-                      price_3: $("#price-3").val(),
-                      item_4: $("#job-item4").val(),
-                      qty_4: $("#qty-4").val(),
-                      price_4: $("#price-4").val(),
-                      item_5: $("#job-item5").val(),
-                      qty_5: $("#qty-5").val(),
-                      price_5: $("#price-5").val(),
-                      item_6: $("#job-item6").val(),
-                      qty_6: $("#qty-6").val(),
-                      price_6: $("#price-6").val(),
-                      other_job_items: $("#other-items").val(),
-                      total_item_price: $("#total-item-price").val().trim(),
-                      po_num: $("#po-num").val(),
-                      mud_district: $("#mud-district").val(),
-                      terms: $("#payment-terms").val(),
-                      sub_total: $("#sub-total").val().trim(),
-                      tax: $("#tax").val().trim(),
-                      total_hours: $("#total-hours").val().trim(),
-                      total_due: $("#total-due").val() ,
-                }
-        })
-        .then((data)=>{
-                console.log(data);
-        })
-    });
+//     // ajax call to input data to database
+//     $(document).on("click", "#submit-invoice", function(){
+//         $.ajax({
+//                 method: "post",
+//                 url: "/invoice",
+//                 data:{
+//                       date: $("#invoice-date").val(),
+//                       invoice_num: $("#invoice").val(),
+//                       company: $("#company").val(),
+//                       bill_to: $("#bill-to").val(),
+//                       job_desc: $("#job-desc").val(),
+//                       materials_used: $("#materials-used").val(),
+//                       equipment_used: $("#equipment-used").val(),
+//                       days_on_job: $("#days-on-job").val(),
+//                       item_1: $("#job-item1").val(),
+//                       qty_1: $("#qty-1").val(),
+//                       price_1: $("#price-1").val(),
+//                       item_2: $("#job-item2").val(),
+//                       qty_2: $("#qty-2").val(),
+//                       price_2: $("#price-2").val(),
+//                       item_3: $("#job-item3").val(),
+//                       qty_3: $("#qty-3").val(),
+//                       price_3: $("#price-3").val(),
+//                       item_4: $("#job-item4").val(),
+//                       qty_4: $("#qty-4").val(),
+//                       price_4: $("#price-4").val(),
+//                       item_5: $("#job-item5").val(),
+//                       qty_5: $("#qty-5").val(),
+//                       price_5: $("#price-5").val(),
+//                       item_6: $("#job-item6").val(),
+//                       qty_6: $("#qty-6").val(),
+//                       price_6: $("#price-6").val(),
+//                       other_job_items: $("#other-items").val(),
+//                       total_item_price: $("#total-item-price").val().trim(),
+//                       po_num: $("#po-num").val(),
+//                       mud_district: $("#mud-district").val(),
+//                       terms: $("#payment-terms").val(),
+//                       sub_total: $("#sub-total").val().trim(),
+//                       tax: $("#tax").val().trim(),
+//                       total_hours: $("#total-hours").val().trim(),
+//                       total_due: $("#total-due").val() ,
+//                 }
+//         })
+//         .then((data)=>{
+//                 console.log(data);
+//         })
+//     });
 });

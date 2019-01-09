@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="/assets/css/logs.css">
+    <link rel="stylesheet" href="/assets/css/schedules.css">
 </head>
 <!-- Navigation & Intro -->
 <div class="navbar-fixed">
@@ -9,7 +9,8 @@
             <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownSearch">
                 Search
             </button>
-            <a href="clear-logs" class="btn btn-outline-danger" id="clearall" role="button" aria-disabled="true">Delete all</a>
+            <a href="clear-lists" class="btn btn-outline-danger" id="clearall" role="button" aria-disabled="true">Delete all</a>
+
             <ul class="right">
                 <img id="logo-img" src="/assets/images/blade.jpg">
             </ul>
@@ -43,20 +44,18 @@
     </li>
 </ul>
 <!-- Navbar -->
-
 <div class="container">
-    <p id="page-title" class="center-align">ALL LOGS</p>
-
+    <p id="page-title" class="center-align">ALL SCHEDULES</p>
 </div>
-{{#each Daily_Log}}
+
+{{#each Schedule}}
 <div class="row col s12">
     <div class="col s2 m2 l3"></div>
     <!-- Modal Trigger -->
     <div class="col">
-        <a href="/delete-log/{{id}}" class="btn btn-outline-danger" id="delete-one" role="button" aria-disabled="true">X</a>
+        <a href="/delete-schedule/{{id}}" class="btn btn-outline-danger" id="delete-one" role="button" aria-disabled="true">X</a>
         <a id="modal-btn" class="btn-large modal-trigger" href="#{{_id}}">
-            <b>{{job_title}}</b>
-            <b id="date"> Date:</b> {{date}}</a>
+            <b>FROM: </b> {{from_date}}</a>
     </div>
     <div class="col s2 m2 l3"></div>
 </div>
@@ -65,29 +64,17 @@
     <div class="modal-content">
         <span>
             <p>
-                <b id="company">DATE:</b> {{date}}</p>
+                <b id="company">DATE: </b> {{from_date}}</p>
             <hr />
             <p>
-                <b id="company">JOB TITLE:</b> {{job_title}}</p>
+                <b id="company">JOB TITLE: </b> {{to_date}}</p>
             <hr />
             <p>
-                <b id="company">COMPANY:</b> {{company}}</p>
+                <b id="company">COMPANY:</b> {{description}}</p>
             <hr />
-            <p>
-                <b id="description">DESCRIPTION:</b> {{job_desc}}</p>
-            <hr />
-            <p>
-                <b id="hours">HOURS WORKED:</b> {{hours}}</p>
-            <hr />
-            <p>
-                <b id="employees">EMPLOYEES:</b> {{employees}}</p>
         </span>
     </div>
 </div>
 {{/each}}
 
-
-
-
-
-<script type="text/javascript" src="/assets/js/logs.js"></script>
+<script type="text/javascript" src="/assets/js/schedules.js"></script>

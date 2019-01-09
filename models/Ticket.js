@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-
+// var multer = require('multer');
 // Save a reference to the Schema constructor
 var Schema = mongoose.Schema;
 
@@ -53,10 +53,10 @@ let TicketSchema = new Schema({
     invoice_number:{
         type: String,
     },
-    // images:{
-    //     type: Image,
-    //     default: "No Images Available" 
-    // }
+    images:{
+        data: Buffer, 
+        contentType: String, 
+    }
 });
 
 // // This creates our model from the above schema, using mongoose's model method

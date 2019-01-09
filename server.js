@@ -34,6 +34,8 @@ let ticket = require("./controllers/ticketController");
 app.use(ticket);
 let invoice = require("./controllers/invoiceController");
 app.use(invoice);
+let schedule = require("./controllers/scheduleController");
+app.use(schedule);
 
 let MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/capstone';
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });

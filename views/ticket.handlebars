@@ -1,0 +1,145 @@
+<head>
+    <link rel="stylesheet" href="/assets/css/ticket.css">
+</head>
+    <!-- Navigation & Intro -->
+    <div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+            <button id="nav-btn" class="btn sidenav-trigger " data-target="slide-out">menu</button>
+            <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownSearch">
+                Search
+            </button>   
+            <ul class="right">
+                <img id="logo-img" src="/assets/images/blade.jpg">
+            </ul>
+        </div>
+    </nav>
+    </div>
+    {{!-- searchbar options --}}
+    <ul id='dropdownSearch' class='dropdown-content'>
+                        <li>
+                            <a id="search-item" class="" href="">Logs</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">Lists</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">Tickets</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">Invoices</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">Help</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">About Us</a>
+                        </li>
+                    </ul>
+    <!-- Navbar -->
+<div id="form" class="container">
+<p class="center-align" id="title">Ticket Form</p>
+<form action="/ticket" method="POST">
+    <div class="row">
+        <!-- datepicker -->
+            <div id="datepicker" class="col s4">
+                <input id="invoice-date" placeholder="Date" name="date" type="text" class="datepicker black-text">
+            </div>
+    </div>
+    <div class="row">
+        <!-- Company name -->
+        <div class="input-field col s6">
+            <input value="" id="ticket-company-name" name="company" type="text" class="validate">
+            <label class="active" for="ticket-company-name">Company Name</label>
+        </div>
+    </div>
+    <div class="row">
+        <!-- job title -->
+        <div class="input-field col s6">
+            <input value="" id="ticket-job-title" name="job_title" type="text" class="validate">
+            <label class="active" for="ticket-job-title">Job Title</label>
+        </div>
+        <div class="input-field col s6">
+            <input type="text" class="form-input" name="address" id="ticket-address" placeholder="1823 Air Born Dr, Katy Tx" />
+            <label class="active" for="ticket-address">Address</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <textarea id="ticket-job-description" name="job_desc" class="materialize-textarea"></textarea>
+            <label for="ticket-job-description">Job Description</label>
+        </div>
+        <div class="input-field col s6">
+            <textarea id="ticket-materials" name="materials_used" class="materialize-textarea"></textarea>
+            <label for="ticket-materials">Materials Used</label>
+        </div>
+        <div class="input-field col s6">
+            <textarea id="ticket-equipment-used" name="equipment_used" class="materialize-textarea"></textarea>
+            <label for="ticket-equipment-used">Equipment Used</label>
+        </div>
+        <div class="input-field col s6">
+            <textarea id="ticket-equipment-rented" name="equipment_rented" class="materialize-textarea"></textarea>
+            <label for="ticket-equipment-rented">Equipment Rented</label>
+        </div>
+        <!-- how many hours worked -->
+        <div class="input-field col s6">
+            <input id="ticket-hours" name="hours" type="text">
+            <label for="ticket-hours">Hours Worked</label>
+        </div>
+        <!-- number of employes or names -->
+        <div class="input-field col s6">
+            <input id="ticket-employees" name="employees" type="text">
+            <label for="ticket-employees">Names or Number of employees</label>
+        </div>
+    </div>
+    <!-- follow up needed in form -->
+    <div id="modal-break">
+        <hr id="modal-break">
+        <p class="center-align" id="title">Follow Up Needed</p>
+        <hr>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <textarea id="follow-up-description" name="follow_job_desc" class="materialize-textarea"></textarea>
+            <label for="follow-up-description">Job Description</label>
+        </div>
+        <div class="input-field col s6">
+            <textarea id="follow-up-materials" name="follow_materials" class="materialize-textarea"></textarea>
+            <label for="follow-up-materials">Materials Needed</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <textarea id="follow-equipment-needed" name="follow_equipment_needed" class="materialize-textarea"></textarea>
+            <label for="follow-equipment-needed">Equipment Needed</label>
+        </div>
+        <!-- how many hours worked -->
+        <div class="input-field col s6">
+            <input id="follow-up-hours" name="follow_hours_worked" type="text">
+            <label for="follow-up-hours">Hours worked</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <textarea id="total-hours" name="total_hours" class="materialize-textarea"></textarea>
+            <label for="total-hours">Total Hours Worked</label>
+        </div>
+        <div class="input-field col s6">
+            <textarea id="invoice-number" name="invoice_number" class="materialize-textarea"></textarea>
+            <label for="invoice-number">Invoice number</label>
+        </div>
+    </div>
+    <button id="submit-ticket" class="btn submit pulse">SAVE
+    </button>
+
+    <button id="share-ticket" href="" class="btn share center-align">Share</button>
+    <button id="cancel-btn" href="#!" class="btn modal-close ">Cancel</button>
+
+</form>
+</div>
+<script type="text/javascript" src="/assets/js/ticket.js"></script>

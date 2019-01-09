@@ -1,0 +1,133 @@
+<head>
+    <link rel="stylesheet" href="/assets/css/list.css">
+</head>
+    <!-- Navigation & Intro -->
+    <div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+            <button id="nav-btn" class="btn sidenav-trigger " data-target="slide-out">menu</button>
+            <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownSearch">
+                Search
+            </button>   
+            <ul class="right">
+                <img id="logo-img" src="/assets/images/blade.jpg">
+            </ul>
+        </div>
+    </nav>
+    </div>
+    {{!-- searchbar options --}}
+    <ul id='dropdownSearch' class='dropdown-content'>
+                        <li>
+                            <a id="search-item" class="" href="">Logs</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">Lists</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">Tickets</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">Invoices</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">Help</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">About Us</a>
+                        </li>
+                    </ul>
+    <!-- Navbar -->
+
+<div id="form" class="container">
+    <p class="center-align" id="title">My To Do list</p>
+    <hr />
+    <form action="list" method="POST">
+        <div class="row">
+            <!-- datepicker -->
+            <div id="datepicker" class="col s4">
+                <input id="invoice-date" placeholder="Date" name="date" type="text" class="datepicker black-text">
+            </div>
+        </div>
+        <div class="row">
+            <!-- name -->
+            <div class="input-field col s6">
+                <input id="list-name" type="text" name="name" class="validate">
+                <label class="active" for="list-name">Name</label>
+            </div>
+        </div>
+        <!-- end row -->
+        <!-- check list row -->
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="list-1" type="text" name="list_1" data-length="30">
+            </div>
+            <div class="input-field col s6">
+                <input id="list-2" type="text" name="list_2" data-length="30">
+            </div>
+            <div class="input-field col s6">
+                <input id="list-3" type="text" name="list_3" data-length="30">
+            </div>
+            <div class="input-field col s6">
+                <input id="list-4" type="text" name="list_4" data-length="30">
+            </div>
+            <div class="input-field col s6">
+                <input id="list-5" type="text" name="list_5" data-length="30">
+            </div>
+            <div class="input-field col s6">
+                <input id="list-6" type="text" name="list_6" data-length="30">
+            </div>
+            <div class="input-field col s6">
+                <input id="list-7" type="text" name="list_7" data-length="30">
+            </div>
+            <div class="input-field col s6">
+                <input id="list-8" type="text" name="list_8" data-length="30">
+            </div>
+            <div class="input-field col s6">
+                <input id="list-9" type="text" name="list_9" data-length="30">
+            </div>
+            <div class="input-field col s6">
+                <input id="list-10" type="text" name="list_10" data-length="30">
+            </div>
+            <div class="input-field col s6">
+                <input id="list-11" type="text" name="list_11" data-length="30">
+            </div>
+            <div class="input-field col s6">
+                <input id="list-12" type="text" name="list_12" data-length="30">
+            </div>
+            <div class="input-field col s6">
+                <input id="list-13" type="text" name="list_13" data-length="30">
+            </div>
+            <div class="input-field col s6">
+                <input id="list-14" type="text" name="list_14" data-length="30">
+            </div>
+            <div class="input-field col s6">
+                <input id="list-15" type="text" name="list_15" data-length="30">
+            </div>
+            <div class="input-field col s6">
+                <input id="list-16" type="text" name="list_16" data-length="30">
+            </div>
+            <div class="input-field col s6">
+                <input id="list-17" type="text" name="list_17" data-length="30">
+            </div>
+            <div class="input-field col s6">
+                <input id="list-18" type="text" name="list_18" data-length="30">
+            </div>
+
+        </div>
+        <!-- end checklist -->
+        <button id="submit-list" class="btn submit pulse">SAVE
+        </button>
+        {{!-- <a id="addItem" href="#!" class="btn-floating ">
+            <i class="material-icons">add</i>
+        </a> --}}
+        <button id="share-list" href="" class="btn share center-align">Share</button>
+        <button id="cancel-btn" href="#!" class="btn modal-close ">Cancel</button>
+    </form>
+</div>
+
+<script type="text/javascript" src="/assets/js/list.js"></script>

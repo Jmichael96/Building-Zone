@@ -4,4 +4,5 @@ module.exports ={
     List: require("./List"),
     Ticket: require("./Ticket"),
     Invoice: require("./Invoice_model"),
+    Schedule: require("./Schedule"),
 };

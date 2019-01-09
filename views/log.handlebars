@@ -1,0 +1,104 @@
+<head>
+    <link rel="stylesheet" href="/assets/css/log.css">
+</head>
+    <!-- Navigation & Intro -->
+    <div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+            <button id="nav-btn" class="btn sidenav-trigger " data-target="slide-out">menu</button>
+            <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownSearch">
+                Search
+            </button>   
+            <ul class="right">
+                <img id="logo-img" src="/assets/images/blade.jpg">
+            </ul>
+        </div>
+    </nav>
+    </div>
+    {{!-- searchbar options --}}
+    <ul id='dropdownSearch' class='dropdown-content'>
+                        <li>
+                            <a id="search-item" class="" href="">Logs</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">Lists</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">Tickets</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">Invoices</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">Help</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">About Us</a>
+                        </li>
+                    </ul>
+    <!-- Navbar -->
+<div id="form" class="container">
+<p id="title" class="center-align">Daily Log</p>
+<hr />
+    <form action="log" method="POST">
+        <div class="row">
+            <!-- datepicker -->
+            <div id="datepicker" class="col s4">
+                <input id="invoice-date" placeholder="Date" name="date" type="text" class="datepicker black-text">
+            </div>
+        </div>
+        <div class="row">
+            <!-- job title -->
+            <div class="input-field col s6">
+                <input value="" id="job-title" type="text" name="job_title" class="validate">
+                <label class="active" for="job-title">Job Title</label>
+            </div>
+            <!-- Company name -->
+            <div class="input-field col s6">
+                <input value="" id="company-name" name="company" type="text" class="validate">
+                <label class="active" for="company-name">Company Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <textarea id="job-desc" name="job_desc" class="materialize-textarea" data-length="120"></textarea>
+                <label for="job-desc">Job Description</label>
+            </div>
+            <div class="input-field col s6">
+                <input type="text" name="hours" id="hours-worked"></input>
+                <label for="hours-worked">Hours worked</label>
+            </div>
+        </div>
+        <div class="row">
+            <!-- number of employes or names -->
+            <div class="input-field col s6">
+                <input id="employee-input" name="employees" type="text">
+                <label for="employee-input">Names or Number of employees</label>
+            </div>
+
+            <!-- upload picture -->
+            <div class="col s6">
+                <div class="file-field input-field">
+                    <div id="file-btn" class="btn">
+                        <span>File</span>
+                        <input type="file" multiple>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </form>
+<button id="submit-log" class="btn submit pulse">Save</button>
+<button id="share-log" href="" class="btn share center-align">Share</button>
+<button id="cancel-btn" href="/daily_log" class="btn modal-close">Cancel</button>
+</div>
+
+<script type="text/javascript" src="/assets/js/logs.js"></script>

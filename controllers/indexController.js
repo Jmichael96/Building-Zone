@@ -13,7 +13,17 @@ router.get("/login", function(req, res){
 router.get("/invoice", (req, res)=>{
     res.render("invoice");
 });
-
-
+router.get("/daily_log", (req, res)=>{
+    res.render("log")
+});
+router.get("/list", (req, res)=>{
+    res.render("list");
+});
+router.get("/ticket", (req, res)=>{
+    res.render("ticket");
+});
+router.get("/scheduler", (req, res)=>{
+    res.render("scheduler");
+})
 
 module.exports = router;

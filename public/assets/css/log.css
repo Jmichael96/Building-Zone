@@ -1,65 +1,46 @@
-form{
+#title{
+    font-size: 50px;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+    margin: 5px;
+    text-shadow: 0 3px 8px black;
+}
+#form{
     background-color: rgba(0, 0, 0, 0.582);
-    margin: 10px 0 20px 0;
+    margin-bottom: 80px;
     box-shadow: 0 4px 10px black, 0 5px 15px black, 0 6px 20px black;
     border-radius: 4px;
 }
-#form-title{
-    font-size: 50px;
-    font-weight: 800;
-    color: white;
-    text-shadow: 0 3px 8px black;
-}
-#logo-img{
-    height: 60px;
-    width: 60px;
-}
-input{
-    color: white;
-}
-/* valid color */
-.input-field input[type=text].valid {
-    border-bottom: 1px solid #ffffff;
-    box-shadow: 0 0 2px #ffffff, 0 0px 3px #ffffff, 0 0px 4px #ffffff;
-    color: rgb(26, 26, 26);
-}
-/* invalid color */
-.input-field input[type=text].invalid {
-    border-bottom: 1px solid rgb(148, 0, 0);
-    box-shadow: 0 1px 0 0 rgb(146, 0, 0);
-    color: rgb(255, 0, 0);
-    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;    
-  }
 
-  /* active btn style for each form */
-#submit-invoice{
+/* active btn style for each form */
+#submit-log{
     background-color: rgb(11, 224, 11);
     color: white;
     border: 1px solid rgb(128, 128, 128);
     box-shadow: 0 2px 10px black;
 }
-#submit-invoice:hover{
+#submit-log:hover{
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     border: 1px solid rgb(11, 224, 11);
     box-shadow: 0 2px 10px rgb(255, 255, 255);
 }
-#submit-invoice:active{
+#submit-log:active{
     transform: translateY(4px);
 }
-#share-invoice{
+#share-log{
     background-color: rgb(0, 0, 88);
     color: white;
     border: 1px solid rgb(128, 128, 128);
     box-shadow: 0 2px 10px black;
 }
-#share-invoice:hover{
+#share-log:hover{
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     border: 1px solid rgb(0, 0, 88);
     box-shadow: 0 2px 10px rgb(255, 255, 255);
 }
-#share-invoice:active{
+#share-log:active{
     transform: translateY(4px);
 }
 #cancel-btn{
