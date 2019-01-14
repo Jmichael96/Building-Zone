@@ -6,7 +6,7 @@ router.post("/ticket", (req, res) =>{
     console.log(req.body)
     db.Ticket.create(req.body)
     .then((dbTicket)=>{
-        res.redirect("/home");
+        res.redirect("/alltickets");
         console.log(dbTicket);
     })
     .catch((err)=>{

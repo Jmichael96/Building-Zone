@@ -1,21 +1,38 @@
-        
-        <h1>Test Authentication 🚀 </h1>
-	<!-- main -->
-	<div class="main">
-		<!--signin-form-->
-		<div class="w3">
-			<div class="signin-form profile">
-				<h3>Login</h3>
-				
-				<div class="login-form">
-					<form action="/" method="post">
-						<input type="text" name="logemail" placeholder="E-mail" required="">
-						<input type="password" name="logpassword" placeholder="Password" required="">
-						<div class="tp">
-							<input type="submit" value="LOGIN NOW">
-						</div>
-					</form>
-				</div>
+<h1>
+	 Authentication 🚀 </h1>
+<!-- main -->
+<div class="main">
+	<!--signin-form-->
+	<div class="w3">
+		<div class="signin-form profile">
+			<h3>Login</h3>
+
+			<div class="login-form">
+				{{!--
+				<form id="login-form" action="/login" method="POST">
+					<input type="text" name="email" id="email" placeholder="email" required="">
+					<input type="password" name="password" id="password" placeholder="Password" required="">
+					<div class="tp">
+						<button type="submit" id="log-in-btn" name="action">Submit</button>
+					</div>
+				</form> --}}
+				<form id="login-form" action="/login" method="POST" class=" blog text-center border border-light p-4">
+
+					<p class="h4 mb-4" id="loginHeading">Let's Blog!</p>
+					<input type="email" name="email" id="email" class="form-control mb-4" placeholder="E-mail" required>
+					<input type="password" name="password" id="password" class="form-control mb-4" placeholder="Password" required>
+
+					<button class="btn btn-light black-text my-4" name="action" type="submit" id="log_in_btn">LogIn</button>
+					<p class="white-text">Not a member?
+						<a href="/register" id="here">Register</a>
+					</p>
+
+				</form>
+
 			</div>
 		</div>
-	</div>	
+	</div>
+</div>
+
+
+<script type="text/javascript" src="/assets/js/login.js"></script>

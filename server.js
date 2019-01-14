@@ -4,14 +4,23 @@ let exphbs = require('express-handlebars');
 let PORT = process.env.PORT || 8000;
 let mongoose = require('mongoose');
 let logger = require("morgan");
-// let passport = require("./config/passport");
+let passport = require("./config/passport");
+let session = require("express-session");
+const path = require("path");
 // const LocalStrategy = require('passport-local').Strategy;
 // var db = require('./models');
+app.use(express.static(path.join(__dirname, "/public")));
+
+
 app.use(logger("dev"));
-// Parse request body as JSON
-app.use(express.urlencoded({ extended: true }));
+
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static("public"));
+// We need to use sessions to keep track of our user's login status
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 app.engine(
     "handlebars",
@@ -20,7 +29,6 @@ app.engine(
     })
 );
 app.set("view engine", "handlebars");
-
 // all of the routes for the controllers
 let user = require("./controllers/userController");
 app.use(user);

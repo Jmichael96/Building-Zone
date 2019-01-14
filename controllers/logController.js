@@ -6,7 +6,7 @@ let db = require('../models');
 router.post("/log", (req, res) =>{
     db.Daily_Log.create(req.body)
     .then((dbDaily_Log)=>{
-        res.redirect("/home")
+        res.redirect("/alllogs")
         console.log(dbDaily_Log);
     })
     .catch((err)=>{

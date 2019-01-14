@@ -6,7 +6,7 @@ router.post("/invoice", (req, res) =>{
     console.log(req.body)
     db.Invoice.create(req.body)
     .then((dbInvoice)=>{
-        res.redirect("/invoice");
+        res.redirect("/allinvoices");
         console.log(dbInvoice);
     })
     .catch((err)=>{

@@ -6,7 +6,7 @@ router.post("/list", (req, res) =>{
     console.log(req.body)
     db.List.create(req.body)
     .then((dbList)=>{
-        res.redirect("/home");
+        res.redirect("/alllists");
         console.log(dbList);
     })
     .catch((err)=>{
@@ -34,7 +34,7 @@ router.get("/delete-list/:id", function (req, res) {
 
   // deleting all lists
   router.get("/clear-lists", function(req, res){
-    db.Daily_Log.deleteMany({})
+    db.List.deleteMany({})
     .then(function(doc){
       console.log(doc);
       res.redirect("/alllists");
@@ -45,4 +45,16 @@ router.get("/delete-list/:id", function (req, res) {
         res.render("/alllists");
     })
   })
+
+  router.post("/update", function(req, res){
+      db.List.updateOne({})
+      .then(function(doc){
+          console.log(doc)
+          res.redirect("alllists");
+          console.log("youve updated something");
+      })
+      .catch((err)=>{
+          console.log(err);
+      })
+  });
 module.exports = router;

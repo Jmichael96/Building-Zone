@@ -7,7 +7,7 @@ router.post("/schedule", (req, res) =>{
     console.log(req.body)
     db.Schedule.create(req.body)
     .then((dbSchedule)=>{
-        res.redirect("/home");
+        res.redirect("/allschedules");
         console.log(dbSchedule);
     })
     .catch((err)=>{

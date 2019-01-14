@@ -1,49 +1,49 @@
 <head>
     <link rel="stylesheet" href="/assets/css/invoices.css">
 </head>
-    <!-- Navigation & Intro -->
-    <div class="navbar-fixed">
+<!-- Navigation & Intro -->
+<div class="navbar-fixed">
     <nav>
         <div class="nav-wrapper">
             <button id="nav-btn" class="btn sidenav-trigger " data-target="slide-out">menu</button>
             <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownSearch">
                 Search
-            </button>  
-                        <a href="clear-invoices" class="btn btn-outline-danger" id="clearall" role="button" aria-disabled="true">Delete all</a>
- 
+            </button>
+            <a href="clear-invoices" class="btn btn-outline-danger" id="clearall" role="button" aria-disabled="true">Delete all</a>
+
             <ul class="right">
                 <img id="logo-img" src="/assets/images/blade.jpg">
             </ul>
         </div>
     </nav>
-    </div>
-    {{!-- searchbar options --}}
-    <ul id='dropdownSearch' class='dropdown-content'>
-                        <li>
-                            <a id="search-item" class="" href="">Logs</a>
-                        </li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li>
-                            <a id="search-item" href="#!">Lists</a>
-                        </li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li>
-                            <a id="search-item" href="#!">Tickets</a>
-                        </li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li>
-                            <a id="search-item" href="#!">Invoices</a>
-                        </li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li>
-                            <a id="search-item" href="#!">Help</a>
-                        </li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li>
-                            <a id="search-item" href="#!">About Us</a>
-                        </li>
-                    </ul>
-    <!-- Navbar -->
+</div>
+{{!-- searchbar options --}}
+<ul id='dropdownSearch' class='dropdown-content'>
+    <li>
+        <a id="search-item" class="" href="">Logs</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Lists</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Tickets</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Invoices</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Help</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">About Us</a>
+    </li>
+</ul>
+<!-- Navbar -->
 <div class="container">
     <p id="page-title" class="center-align">ALL INVOICES</p>
 </div>
@@ -51,51 +51,81 @@
 {{#each Invoice}}
 <div class="row col s12">
     <div class="col s2 m2 l2"></div>
-  <!-- Modal Trigger -->
+    <!-- Modal Trigger -->
     <div class="col">
         <a href="/delete-invoice/{{id}}" class="btn btn-outline-danger" id="delete-one" role="button" aria-disabled="true">X</a>
-        <a id="modal-btn" class="btn-large modal-trigger" href="#{{_id}}"><b id="billed-to">Billed To:</b> {{bill_to}} <b id="date">Date:</b>{{date}}</a>
+        <a id="modal-btn" class="btn-large modal-trigger" href="#{{_id}}">
+            <b id="billed-to">Billed To:</b> {{bill_to}}
+            <b id="date">Date:</b>{{date}}</a>
     </div>
     <div class="col s2 m2 l2"></div>
 </div>
-  <!-- Modal Structure -->
-  <div id="{{_id}}" class="modal">
+<!-- Modal Structure -->
+<div id="{{_id}}" class="modal">
     <div class="modal-content">
-        <p>{{date}}</p>
-      <h4>{{company}}</h4>
-      <p>Invoice Number: {{invoice_num}}</p>
-      <p>{{job_desc}}</p>
-      <p>{{materials_used}}</p>
-      <p>{{equipment_used}}</p>
-      <p>{{days_on_job}}</p>
-      <p>{{item_1}}</p>
-      <p>{{qty_1}}</p>
-      <p>{{price_1}}</p>
-      <p>{{item_2}}</p>
-      <p>{{qty_2}}</p>
-      <p>{{price_2}}</p>
-      <p>{{item_3}}</p>
-      <p>{{qty_3}}</p>
-      <p>{{price_3}}</p>
-      <p>{{item_4}}</p>
-      <p>{{qty_4}}</p>
-      <p>{{price_4}}</p>
-      <p>{{item_5}}</p>
-      <p>{{qty_5}}</p>
-      <p>{{price_5}}</p>
-      <p>{{item_6}}</p>
-      <p>{{qty_6}}</p>
-      <p>{{price_6}}</p>
-      <p>{{other_job_items}}</p>
-      <p>{{total_item_price}}</p>
-      <p>PO Number: {{po_num}}</p>
-      <p>mud District: {{mud_district}}</p>
-      <p>terms of payment: {{terms}}</p>
-      <p>sub total: {{sub_total}}</p>
-      <p>Tax: {{tax}}</p>
-      <p>total hours: {{total_hours}}</p>
-      <p>total Due: {{total_due}}</p>
+        <p class="center">{{date}}</p>
+        <h3 class="center">{{company}}</h3>
+        <p>
+            <b>Invoice #: </b> {{invoice_num}}</p>
+            <hr />
+        <p>
+            <b id="invoice-label">Job Description: </b> {{job_desc}}</p>
+            <hr />
+        <p>
+            <b id="invoice-label">Materials Used: </b> {{materials_used}}</p>
+            <hr />
+        <p>
+            <b id="invoice-label">Equipment Used: </b> {{equipment_used}}</p>
+            <hr />
+        <p>
+            <b id="invoice-label">Days On the Job Site: </b> {{days_on_job}}</p>
+            <hr />
+        <p>{{item_1}}</p>
+        <p>{{qty_1}}</p>
+        <p>{{price_1}}</p>
+        <p>{{item_2}}</p>
+        <p>{{qty_2}}</p>
+        <p>{{price_2}}</p>
+        <p>{{item_3}}</p>
+        <p>{{qty_3}}</p>
+        <p>{{price_3}}</p>
+        <p>{{item_4}}</p>
+        <p>{{qty_4}}</p>
+        <p>{{price_4}}</p>
+        <p>{{item_5}}</p>
+        <p>{{qty_5}}</p>
+        <p>{{price_5}}</p>
+        <p>{{item_6}}</p>
+        <p>{{qty_6}}</p>
+        <p>{{price_6}}</p>
+        <p>
+            <b id="invoice-label">Other Job Items: </b> {{other_job_items}}</p>
+            <hr />
+        <p>
+            <b id="invoice-label">Total Item Price: </b> {{total_item_price}}</p>
+            <hr />
+        <p>
+            <b id="invoice-label">PO Number: </b> {{po_num}}</p>
+            <hr />
+        <p>
+            <b id="invoice-label">Mud District: </b> {{mud_district}}</p>
+            <hr />
+        <p>
+            <b id="invoice-label">Terms of Payment: </b> {{terms}}</p>
+            <hr />
+        <p>
+            <b id="invoice-label">Sub-Total: </b>{{sub_total}}</p>
+            <hr />
+        <p>
+            <b id="invoice-label">Tax: </b> {{tax}}</p>
+            <hr />
+        <p>
+            <b id="invoice-label">Total Hours: </b> {{total_hours}}</p>
+            <hr />
+        <p>
+            <b id="invoice-label">Total Due: </b> {{total_due}}</p>
+            <hr />
     </div>
-  </div>
+</div>
 {{/each}}
 <script type="text/javascript" src="/assets/js/invoices.js"></script>

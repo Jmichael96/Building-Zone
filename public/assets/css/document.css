@@ -1,0 +1,13 @@
+#title{
+    font-size: 50px;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+    margin: 5px;
+    text-shadow: 0 3px 8px black;
+}
+#form{
+    background-color: rgba(0, 0, 0, 0.582);
+    margin-bottom: 80px;
+    box-shadow: 0 4px 10px black, 0 5px 15px black, 0 6px 20px black;
+    border-radius: 4px;
+}
