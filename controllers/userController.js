@@ -25,28 +25,28 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 router.get("/login", function(req, res) {
   // If the user already has an account send them to the members page
   if (req.user) {
-    res.redirect("/home");
+    res.redirect("/users");
   }
   res.render("login");
 });
 
-router.get("/home", isAuthenticated, function(req, res) {
-  if(req.isAuthenticated()) {
-    console.log('user logged in', req.user);
-    res.render("home");
-    next();
-}
-else {
-   console.log('user not logged in');
-}
-});
-router.post("/api/login", passport.authenticate("local"), function(req, res) {
+// router.get("/home", isAuthenticated, function(req, res) {
+//   if(req.isAuthenticated()) {
+//     console.log('user logged in', req.user);
+//     res.render("home");
+//     next();
+// }
+// else {
+//    console.log('user not logged in');
+// }
+// });
+// router.post("/api/login", passport.authenticate("local"), function(req, res) {
 
-  res.json("/members");
-});
-router.get("/login", function (req, res) {
-  res.render("login");
-});
+//   res.json("/users");
+// });
+// router.get("/login", function (req, res) {
+//   res.render("login");
+// });
 
 router.post('/register', (req, res) => {
   // TODO: Convert so that it is saving data coming from the view

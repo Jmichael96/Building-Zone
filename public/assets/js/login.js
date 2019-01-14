@@ -1,8 +1,8 @@
 // $(document).ready(function() {
 //     // Getting references to our form and inputs
-//     var loginForm = $("#login-form");
-//     var emailInput = $("#email");
-//     var passwordInput = $("#password");
+//     var loginForm = $("form.login");
+//     var emailInput = $("input#email-input");
+//     var passwordInput = $("input#password-input");
   
 //     // When the form is submitted, we validate there's an email and password entered
 //     loginForm.on("submit", function(event) {
@@ -34,28 +34,28 @@
 //         console.log(err);
 //       });
 //     }
-  
 //   });
-$(document).ready(function() {
-    console.log("LogIn app loaded");
-    $("#log_in_btn").on("submit", function(event){
 
-        event.preventDefault();
+// // $(document).ready(function() {
+// //     console.log("LogIn app loaded");
+// //     $("#log_in_btn").on("submit", function(event){
+
+// //         event.preventDefault();
         
-        // //Grab data from sign in form
-        // var userData = {
-        //     email: $("#email").val().trim(),
-        //     password: $("#password").val().trim(),
-        // };
-        $.post("/api/login",{
-            data: {
-                email: $("#email").val().trim(),
-                password: $("#password").val().trim()
-            },
+// //         // //Grab data from sign in form
+// //         // var userData = {
+// //         //     email: $("#email").val().trim(),
+// //         //     password: $("#password").val().trim(),
+// //         // };
+// //         $.post("/api/login",{
+// //             data: {
+// //                 email: $("#email").val().trim(),
+// //                 password: $("#password").val().trim()
+// //             },
         
-        }).then(function(data) {
-            window.location.replace(data);
-        });
-        console.log(data)
-    });
-});  
+// //         }).then(function(data) {
+// //             window.location.replace(data);
+// //         });
+// //         console.log(data)
+// //     });
+// // });  

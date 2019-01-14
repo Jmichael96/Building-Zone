@@ -8,7 +8,6 @@ let passport = require("./config/passport");
 let session = require("express-session");
 const path = require("path");
 // const LocalStrategy = require('passport-local').Strategy;
-// var db = require('./models');
 app.use(express.static(path.join(__dirname, "/public")));
 
 
@@ -19,8 +18,8 @@ app.use(express.json());
 app.use(express.static("public"));
 // We need to use sessions to keep track of our user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.engine(
     "handlebars",
@@ -29,6 +28,11 @@ app.engine(
     })
 );
 app.set("view engine", "handlebars");
+
+let apiRoutes = require("./routes/apiRoutes");
+app.use(apiRoutes);
+let htmlRoutes = require("./routes/htmlRoutes");
+app.use(htmlRoutes);
 // all of the routes for the controllers
 let user = require("./controllers/userController");
 app.use(user);

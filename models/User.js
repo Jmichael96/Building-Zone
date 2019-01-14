@@ -2,13 +2,6 @@ const bcrypt = require('bcrypt-nodejs');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-/**
- * Users must have:
- * - username
- * - email
- * - password
- */
-
 const UserSchema = new Schema({
     username: {
         type: String,
@@ -40,12 +33,8 @@ UserSchema.pre('validate', function(next) {
         }
     });
 });
-UserSchema.methods.validPassword = function(password, cb){
-
-  bcrypt.compare(password, this.login.local.password, function(err, isMatch){
-      if(err) return cb(err);
-      cb(null, isMatch);
-  });
-}
+UserSchema.methods.validPassword = function(password){
+    return bcrypt.compareSync(password, this.password)
+};
 
 module.exports = mongoose.model('User', UserSchema);
