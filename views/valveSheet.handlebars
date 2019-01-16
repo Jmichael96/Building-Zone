@@ -1,0 +1,103 @@
+<head>
+    <link rel="stylesheet" href="/assets/css/valve.css">
+</head>
+<!-- Navigation & Intro -->
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+            <button id="nav-btn" class="btn sidenav-trigger " data-target="slide-out">menu</button>
+            <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownSearch">
+                Search
+            </button>
+            <ul class="right">
+                <img id="logo-img" src="/assets/images/blade.jpg">
+            </ul>
+        </div>
+    </nav>
+</div>
+{{!-- searchbar options --}}
+<ul id='dropdownSearch' class='dropdown-content'>
+    <li>
+        <a id="search-item" class="" href="">Logs</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Lists</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Tickets</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Invoices</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Help</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">About Us</a>
+    </li>
+</ul>
+<!-- Navbar -->
+
+<div id="form" class="container">
+<p id="title" class="center-align">Valve Document</p>
+<hr />
+    <form action="valve" method="POST">
+        <div class="row">
+            <!-- datepicker -->
+            <div id="datepicker" class="col s4">
+                <input id="invoice-date" placeholder="Date" name="date" type="text" class="datepicker black-text">
+            </div>
+        </div>
+        <div class="row">
+            <!-- city -->
+            <div class="input-field col s6">
+                <input value="" id="city" type="text" name="city" class="validate">
+                <label class="active" for="city">City</label>
+            </div>
+            <!-- Company name -->
+            <div class="input-field col s6">
+                <input value="" id="company-name" name="company" type="text" class="validate">
+                <label class="active" for="company-name">Company Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="job-desc" name="job_desc" class="materialize-textarea"></textarea>
+                <label for="job-desc">Job Notes</label>
+            </div>
+        </div>
+        <div class="row">
+            <!-- number of employes or names -->
+            <div class="input-field col s12">
+                <textarea id="valve-description" name="valve_desc" rows="5" type="text"></textarea>
+                <label for="valve-description">Valve Descriptions</label>
+            </div>
+        </div>
+        <div class="row">
+            <!-- number of employes or names -->
+            <div class="input-field col s12">
+                <textarea id="valve-description2" name="valve_desc2" rows="5" type="text"></textarea>
+                <label for="valve-description2">Valve Descriptions</label>
+            </div>
+        </div>
+        <div class="row">
+            <!-- number of employes or names -->
+            <div class="input-field col s12">
+                <textarea id="valve-description3" name="valve_desc3" rows="5" type="text"></textarea>
+                <label for="valve-description3">Valve Descriptions</label>
+            </div>
+        </div>
+        <button type="submit" id="submit-log" class="btn submit pulse">Save</button>
+        <button id="share-log" href="" class="btn share center-align">Share</button>
+        <button id="cancel-btn" href="/valveSheet" class="btn modal-close">Cancel</button>
+    </form>
+</div>
+
+<script type="text/javascript" src="/assets/js/valve.js"></script>
+
+

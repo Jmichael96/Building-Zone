@@ -5,4 +5,7 @@ module.exports ={
     Ticket: require("./Ticket"),
     Invoice: require("./Invoice_model"),
     Schedule: require("./Schedule"),
+    Document: require("./Document"),
+    Valve: require("./Valve"),
+    Image: require("./Image"),
 };

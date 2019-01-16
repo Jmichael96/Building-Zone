@@ -1,0 +1,90 @@
+<head>
+    <link rel="stylesheet" href="/assets/css/logs.css">
+</head>
+<!-- Navigation & Intro -->
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+            <button id="nav-btn" class="btn sidenav-trigger " data-target="slide-out">menu</button>
+            <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownSearch">
+                Search
+            </button>
+            <a href="clear-logs" class="btn btn-outline-danger" id="clearall" role="button" aria-disabled="true">Delete all</a>
+            <ul class="right">
+                <img id="logo-img" src="/assets/images/blade.jpg">
+            </ul>
+        </div>
+    </nav>
+</div>
+{{!-- searchbar options --}}
+<ul id='dropdownSearch' class='dropdown-content'>
+    <li>
+        <a id="search-item" class="" href="">Logs</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Lists</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Tickets</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Invoices</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Help</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">About Us</a>
+    </li>
+</ul>
+<!-- Navbar -->
+
+<div class="container">
+    <p id="page-title" class="center-align">ALL Documents</p>
+
+</div>
+{{#each Document}}
+<div class="row col s12">
+    <div class="col s2 m2 l3"></div>
+    <!-- Modal Trigger -->
+    <div class="col">
+        <a href="/delete-log/{{id}}" class="btn btn-outline-danger" id="delete-one" role="button" aria-disabled="true">X</a>
+        <a id="modal-btn" class="btn-large modal-trigger" href="#{{_id}}">
+            <b>{{name}}</b>
+            <b id="date"> Date:</b> {{date}}</a>
+    </div>
+    <div class="col s2 m2 l2"></div>
+</div>
+<!-- Modal Structure -->
+<div id="{{_id}}" class="modal">
+    <div class="modal-content">
+        <span>
+            <p>
+                <b id="date">DATE:</b> {{date}}</p>
+            <hr />
+            <p>
+                <b id="name">NAME:</b> {{name}}</p>
+            <hr />
+            <p>
+                <b id="note-1">NOTE ONE:</b> {{log1}}</p>
+            <hr />
+            <p>
+                <b id="note-2">NOTE TWO:</b> {{log2}}</p>
+            <hr />
+            <p>
+                <b id="note-3">NOTE THREE:</b> {{log3}}</p>
+        </span>
+    </div>
+</div>
+{{/each}}
+
+
+
+
+
+<script type="text/javascript" src="/assets/js/logs.js"></script>

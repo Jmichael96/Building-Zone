@@ -2,29 +2,32 @@ var mongoose = require("mongoose");
 
 var Schema = mongoose.Schema;
 
-let DocumentSchema = new Schema({
+let ValveSchema = new Schema({
     date: {
         type: Date,
     },
-    name:{
+    city:{
         type: String,
     }, 
     company:{
         type: String,
     },
-    log1:{
+    job_desc:{
         type: String,
     },
-    log2:{
+    valve_desc:{
         type: String,
     },
-    log3:{
+    valve_desc2:{
+        type: String,
+    },
+    valve_desc3:{
         type: String,
     },
 });
 
 // // This creates our model from the above schema, using mongoose's model method
-var Document = mongoose.model("Document", DocumentSchema);
+var Valve = mongoose.model("Valve", ValveSchema);
 
 // Export the User model
-module.exports = Document;
+module.exports = Valve;

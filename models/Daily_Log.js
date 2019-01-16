@@ -22,9 +22,9 @@ let Daily_LogSchema = new Schema({
     employees:{
         type: String,
     },
-    // images:{
-    //     type: Image,
-    //     default: "No Images Available" 
+    // img: { 
+    //     data: Buffer, 
+    //     contentType: String,
     // }
 });
 

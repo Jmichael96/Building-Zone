@@ -2,52 +2,52 @@
     <link rel="stylesheet" href="/assets/css/document.css">
 </head>
 
-    <!-- Navigation & Intro -->
-    <div class="navbar-fixed">
+<!-- Navigation & Intro -->
+<div class="navbar-fixed">
     <nav>
         <div class="nav-wrapper">
             <button id="nav-btn" class="btn sidenav-trigger " data-target="slide-out">menu</button>
             <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownSearch">
                 Search
-            </button>   
+            </button>
             <ul class="right">
                 <img id="logo-img" src="/assets/images/blade.jpg">
             </ul>
         </div>
     </nav>
-    </div>
-    {{!-- searchbar options --}}
-    <ul id='dropdownSearch' class='dropdown-content'>
-                        <li>
-                            <a id="search-item" class="" href="">Logs</a>
-                        </li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li>
-                            <a id="search-item" href="#!">Lists</a>
-                        </li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li>
-                            <a id="search-item" href="#!">Tickets</a>
-                        </li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li>
-                            <a id="search-item" href="#!">Invoices</a>
-                        </li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li>
-                            <a id="search-item" href="#!">Help</a>
-                        </li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li>
-                            <a id="search-item" href="#!">About Us</a>
-                        </li>
-                    </ul>
-    <!-- Navbar -->
+</div>
+{{!-- searchbar options --}}
+<ul id='dropdownSearch' class='dropdown-content'>
+    <li>
+        <a id="search-item" class="" href="">Logs</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Lists</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Tickets</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Invoices</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Help</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">About Us</a>
+    </li>
+</ul>
+<!-- Navbar -->
 
 <div id="form" class="container">
-<p id="title" class="center-align">Document</p>
-<hr />
-    <form action="log" method="POST">
+    <p id="title" class="center-align">Document</p>
+    <hr />
+    <form action="document" method="POST">
         <div class="row">
             <!-- datepicker -->
             <div id="datepicker" class="col s4">
@@ -55,29 +55,35 @@
             </div>
         </div>
         <div class="row">
-            <!-- job title -->
-            <div class="input-field col s6">
+            <!-- name-->
+            <div class="input-field col s4">
                 <input value="" id="name" type="text" name="name" class="validate">
                 <label class="active" for="name">Name</label>
             </div>
-            <!-- Company name -->
-            <div class="input-field col s6">
-                <input value="" id="log1" name="log1" type="text" class="validate">
-                <label class="active" for="log1">Log</label>
-            </div>
         </div>
         <div class="row">
-            <div class="input-field col s6">
-                <textarea id="log2" name="log2" class="materialize-textarea" data-length="120"></textarea>
-                <label for="log2">Log Two</label>
+            <!-- note 1 -->
+            <div class="input-field col s12">
+                <textarea value="" id="log1" class="materialize-textarea" name="log1" type="text" rows="4" class="validate"></textarea>
+                <label class="active" for="log1">Note Section</label>
             </div>
-            <div class="input-field col s6">
-                <input type="text" id="log3" name="log3" id="hours-worked"></input>
-                <label for="log3">Log Three</label>
+            {{!-- note two --}}
+            <div class="input-field col s12">
+                <textarea id="log2" name="log2" class="materialize-textarea" rows="4"></textarea>
+                <label for="log2">Note Section</label>
+            </div>
+            {{!-- note three --}}
+            <div class="input-field col s12">
+                <textarea type="text" id="log3" class="materialize-textarea" name="log3" rows="4" id="hours-worked"></textarea>
+                <label for="log3">Note section</label>
             </div>
         </div>
+                <button type="submit" id="submit-document" class="btn submit pulse">Save</button>
+        <button id="share-log" href="" class="btn share center-align">Share</button>
+        <button id="cancel-btn" href="/document" class="btn modal-close">Cancel</button>
+
     </form>
-<button id="submit-document" class="btn submit pulse">Save</button>
-<button id="share-log" href="" class="btn share center-align">Share</button>
-<button id="cancel-btn" href="/document" class="btn modal-close">Cancel</button>
+
 </div>
+
+<script type="text/javascript" src="/assets/js/document.js"></script>

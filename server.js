@@ -7,9 +7,11 @@ let logger = require("morgan");
 let passport = require("./config/passport");
 let session = require("express-session");
 const path = require("path");
+require('dotenv').config()
+let id = process.env.MAP_KEY;
+console.log("id key " + id);
 // const LocalStrategy = require('passport-local').Strategy;
 app.use(express.static(path.join(__dirname, "/public")));
-
 
 app.use(logger("dev"));
 
@@ -48,6 +50,12 @@ let invoice = require("./controllers/invoiceController");
 app.use(invoice);
 let schedule = require("./controllers/scheduleController");
 app.use(schedule);
+let document = require("./controllers/documentController");
+app.use(document);
+let map = require("./controllers/mapController");
+app.use(map);
+let valve = require("./controllers/valveController");
+app.use(valve);
 
 let MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/capstone';
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });

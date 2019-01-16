@@ -47,5 +47,14 @@ router.get("/scheduler", (req, res)=>{
 router.get("/document", (req, res) =>{
     res.render("document");
 });
+router.get("/valve", (req, res) =>{
+    res.render("valveSheet");
+});
+router.get("/locates", (req, res) =>{
+    res.render("locates");
+});
+router.get("/image", (req, res) =>{
+    res.render("img");
+});
 
 module.exports = router;

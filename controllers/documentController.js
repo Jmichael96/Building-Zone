@@ -1,22 +1,33 @@
 let express = require('express');
 let router = express.Router();
-let db = ("../models");
-router.post("/document", (req, res) =>{
+let db = require("../models");
+
+router.post("/document", (req, res) => {
     console.log(req.body);
     db.Document.create(req.body)
-    .then((dbDocument) =>{
-        res.redirect("/alldocuments");
-        console.log(dbDocument);
-    })
-    .catch((err) =>{
-        console.log(err);
-    })
+        .then((dbDocument) => {
+            res.redirect("/home");
+            console.log(dbDocument);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
 });
 
-router.get("/documents", (req, res) =>{
+router.get("/documents", (req, res) => {
     db.Document.find({})
-    .then((dbDocument) =>{
-        res.json(dbDocument);
-    });
+        .then(function (dbDocument) {
+            res.json(dbDocument);
+        });
 });
+
+router.get("/alldocuments", (req, res) => {
+    db.Document.find().sort({ _id: -1 })
+        .then((dbDocument) => {
+            res.render("allDocuments", {
+                Document: dbDocument
+            });
+        });
+});
+
 module.exports = router;

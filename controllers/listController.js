@@ -46,15 +46,15 @@ router.get("/delete-list/:id", function (req, res) {
     })
   })
 
-  router.post("/update", function(req, res){
-      db.List.updateOne({})
-      .then(function(doc){
-          console.log(doc)
-          res.redirect("alllists");
-          console.log("youve updated something");
-      })
-      .catch((err)=>{
-          console.log(err);
-      })
-  });
+//   router.post("/update", function(req, res){
+//       db.List.updateOne({})
+//       .then(function(doc){
+//           console.log(doc)
+//           res.redirect("alllists");
+//           console.log("youve updated something");
+//       })
+//       .catch((err)=>{
+//           console.log(err);
+//       })
+//   });
 module.exports = router;

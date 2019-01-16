@@ -16,7 +16,7 @@ router.post("/schedule", (req, res) =>{
 });
 router.get("/schedules", (req,res)=>{
     db.Schedule.find({})
-    .then(function(dbSchedule){
+    .then((dbSchedule) =>{
         res.json(dbSchedule);
     })
 });

@@ -1,6 +1,4 @@
 const passport = require('../config/passport');
-const settings = require('../config/settings');
-
 const express = require('express');
 const router = express.Router();
 
@@ -28,4 +26,5 @@ router.post("/api/login", passport.authenticate("local"), function(req, res) {
       });
     }
   });
+
 module.exports = router;

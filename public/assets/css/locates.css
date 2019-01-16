@@ -1,0 +1,33 @@
+#page-title{
+    font-weight: 800;
+    font-size: 80px;
+    color: black;
+    text-shadow: 0 1px 8px rgb(255, 255, 255);
+    padding: 5px;
+}
+#heading{
+    font-weight: 800;
+    font-size: 40px;
+    color: black;
+    text-shadow: 0 1px 8px rgb(255, 255, 255);
+    padding: 5px;
+    margin-top: 20px;
+}
+.link{
+    color: white;
+    font-size: 18px;
+    margin: 10px;
+    background-color: rgb(90, 0, 0);
+    color: white;
+    box-shadow: 0 3px 10px black, 0 4px 15px black;
+}
+.link:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 3px 10px rgb(0, 0, 0), 0 4px 15px rgb(0, 0, 0), 0 6px 20px black, 0 8px 25px black;
+
+}
+.link:active{
+    transform: translateY(4px);
+    background-color: rgb(255, 255, 255);
+}
