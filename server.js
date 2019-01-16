@@ -7,9 +7,7 @@ let logger = require("morgan");
 let passport = require("./config/passport");
 let session = require("express-session");
 const path = require("path");
-require('dotenv').config()
-let id = process.env.MAP_KEY;
-console.log("id key " + id);
+
 // const LocalStrategy = require('passport-local').Strategy;
 app.use(express.static(path.join(__dirname, "/public")));
 
