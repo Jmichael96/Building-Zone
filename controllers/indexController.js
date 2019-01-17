@@ -1,28 +1,31 @@
 let express = require('express');
 let router = express.Router();
+let passport = require("../config/passport");
 // let passport = require("../config/passport");
 // var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 router.get("/home", function(req, res){
     res.render("index");
 })
-router.get("/home", function(req, res){
-    console.log(req.user);
-    if(req.user) {
-        res.render("/home");
-    }
-    res.redirect("/register");
-});
+// router.get("/home", function(req, res){
+//     console.log(req.user);
+//     if(req.user) {
+//         res.render("/home");
+//     }
+//     res.redirect("/register");
+// });
 router.get("/register", function(req, res, next){
     res.render("register");
 });
-// router.get("/login", function (req, res) {
-//     res.render("login");
-// });
-// router.post("/login", passport.authenticate("local", {
-//     successRedirect: "/home",
-//     failureRedirect: "/login",
-// }));
+router.get("/login", function (req, res) {
+    res.render("login");
+});
+// rou
+router.post("/login", passport.authenticate("local", {
+    successRedirect: "/home",
+    failureRedirect: "/home"
+}));
+
 // //logout redirects back to homepage
 // router.get("/logout", function (req, res) {
 //     req.logout();

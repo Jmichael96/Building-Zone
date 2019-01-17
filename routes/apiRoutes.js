@@ -1,30 +1,32 @@
 const passport = require('../config/passport');
 const express = require('express');
 const router = express.Router();
+const user = require("../models");
+// router.post("/api/login", passport.authenticate("local", 
+// {successRedirect: '/home',
+// failureRedirect: '/register' 
+// }));
+// router.post('/userlogin',
+//   passport.authenticate('local', {
+//     successRedirect: '/home',
+//     failureRedirect: '/register',
+//     successFlash: 'Welcome!'
+//   }))
 
-router.post("/api/login", passport.authenticate("local"), function(req, res) {
+// router.post('/api/login', passport.authenticate('local'), (req, res) => {
+//   if (req.user) {
+//     res.send({user: req.user});
+//   } else {
+//     res.status(401).send({error: 'Error logging in!'});
+//   }
+// });
 
-    res.json("/users");
-  });
+// router.get('/api/users/me',
+//   passport.authenticate('basic', { session: false }),
+//   function(req, res, user) {
+//     res.json({ id: req.user._id, username: req.user.username });
+//   });
 
-  router.get("/logout", function(req, res) {
-    req.logout();
-    res.redirect("/");
-  });
 
-  router.get("/api/user_data", function(req, res) {
-    if (!req.user) {
-      // The user is not logged in, send back an empty object
-      res.json({});
-    }
-    else {
-      // Otherwise send back the user's email and id
-      // Sending back a password, even a hashed password, isn't a good idea
-      res.json({
-        email: req.user.email,
-        id: req.user.id
-      });
-    }
-  });
 
 module.exports = router;

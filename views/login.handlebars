@@ -1,89 +1,82 @@
 <h1>
-	 Authentication 🚀 </h1>
+  Authentication 🚀 </h1>
 <!-- main -->
 <div class="main">
-	<!--signin-form-->
-	<div class="w3">
-		<div class="signin-form profile">
-			<h3>Login</h3>
+  <!--signin-form-->
+  <div class="w3">
+    <div class="signin-form profile">
+      <h3>Login</h3>
 
-			<div class="login-form">
-				{{!--
-				<form id="login-form" action="/login" method="POST">
-					<input type="text" name="email" id="email" placeholder="email" required="">
-					<input type="password" name="password" id="password" placeholder="Password" required="">
-					<div class="tp">
-						<button type="submit" id="log-in-btn" name="action">Submit</button>
-					</div>
-				</form> --}}
-				{{!-- <form id="login-form" action="/api/login" method="POST" class=" blog text-center border border-light p-4">
-
-					<p class="h4 mb-4" id="loginHeading">Let's Blog!</p>
-					<input type="email" name="email" id="email" class="form-control mb-4" placeholder="E-mail" required>
-					<input type="password" name="password" id="password" class="form-control mb-4" placeholder="Password" required>
-
-					<button class="btn btn-light black-text my-4" name="action" type="submit" id="log_in_btn">LogIn</button>
-					<p class="white-text">Not a member?
-						<a href="/register" id="here">Register</a>
-					</p>
-
-				</form> --}}
-<form class="login">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
-          </div>
-          <button type="submit" class="btn btn-default">Login</button>
-        </form>
-        <br />
-        <p>Or sign up <a href="/">here</a></p>
-			</div>
-		</div>
-	</div>
+      {{!-- <form action="/login" method="post">
+        <div>
+          <label>Username:</label>
+          <input type="text" name="username" />
+        </div>
+        <div>
+          <label>Password:</label>
+          <input type="password" name="password" />
+        </div>
+        <div>
+          <input type="submit" value="Log In" />
+        </div>
+      </form> --}}
+      <form class="login">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Password">
+        </div>
+        <button type="submit" id="loginBtn" class="btn btn-default">Login</button>
+      </form>
+      <br />
+      <p>Or sign up <a href="/">here</a></p>
+    </div>
+  </div>
 </div>
+{{!--
 <script type="text/javascript">
-$(document).ready(function() {
-  // Getting references to our form and inputs
-  var loginForm = $("form.login");
-  var emailInput = $("input#email-input");
-  var passwordInput = $("input#password-input");
+  $(document).ready(function () {
+    // Getting references to our form and inputs
+    var loginForm = $("form.login");
+    var emailInput = $("input#email-input");
+    var passwordInput = $("input#password-input");
 
-  // When the form is submitted, we validate there's an email and password entered
-  loginForm.on("submit", function(event) {
-    event.preventDefault();
-    var userData = {
-      email: emailInput.val().trim(),
-      password: passwordInput.val().trim()
-    };
+    // When the form is submitted, we validate there's an email and password entered
+    loginForm.on("submit", function (event) {
+      event.preventDefault();
+      var userData = {
+        email: emailInput.val().trim(),
+        password: passwordInput.val().trim()
+      };
 
-    if (!userData.email || !userData.password) {
-      return;
+      if (!userData.email || !userData.password) {
+        return;
+      }
+
+      // If we have an email and password we run the loginUser function and clear the form
+      loginUser(userData.email, userData.password);
+      emailInput.val("");
+      passwordInput.val("");
+    });
+
+    // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
+    function loginUser(email, password) {
+      $.post("/api/login", {
+        email: email,
+        password: password
+      }).then(function (data) {
+        window.location.replace(data);
+        // If there's an error, log the error
+      }).catch(function (err) {
+        console.log(err);
+      });
     }
 
-    // If we have an email and password we run the loginUser function and clear the form
-    loginUser(userData.email, userData.password);
-    emailInput.val("");
-    passwordInput.val("");
   });
+</script> --}}
 
-  // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
-  function loginUser(email, password) {
-    $.post("/api/login", {
-      email: email,
-      password: password
-    }).then(function(data) {
-      window.location.replace(data);
-      // If there's an error, log the error
-    }).catch(function(err) {
-      console.log(err);
-    });
-  }
 
-});
-</script>
-
-{{!-- <script type="text/javascript" src="/assets/js/login.js"></script> --}}
+<script type="text/javascript" src="/assets/js/login.js"></script>
