@@ -54,6 +54,11 @@ body{
     color: white;
     font-weight: 800;
 }
+#title-update{
+    font-size: 40px;
+    margin: 10px;
+    color: white;
+}
 .btn-large{
     background-color: rgb(90, 0, 0);
     color: white;

@@ -22,10 +22,15 @@ let Daily_LogSchema = new Schema({
     employees:{
         type: String,
     },
+    
     // img: { 
     //     data: Buffer, 
     //     contentType: String,
     // }
+    note: {
+        type: String,
+        required: false,
+      },
 });
 
 // // This creates our model from the above schema, using mongoose's model method
