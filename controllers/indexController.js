@@ -4,7 +4,7 @@ let passport = require("../config/passport");
 // let passport = require("../config/passport");
 // var isAuthenticated = require("../config/middleware/isAuthenticated");
 
-router.get("/home", function(req, res){
+router.get("/", function(req, res){
     res.render("index");
 })
 // router.get("/home", function(req, res){
