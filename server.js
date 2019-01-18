@@ -1,7 +1,7 @@
 let express = require("express");
 let app = express();
 let exphbs = require('express-handlebars');
-let PORT = process.env.PORT || 8000;
+let PORT = process.env.PORT || 8080;
 let mongoose = require('mongoose');
 let logger = require("morgan");
 let passport = require("./config/passport");
@@ -84,5 +84,5 @@ app.use(function (req, res, next) {
     res.send(err.message);
   });
 app.listen(PORT, function () {
-  console.log("Visit http://localhost:%s/ in your browser.", PORT, PORT);
+  console.log("Visit http://localhost:%s/ in your browser.", PORT);
 });

@@ -4,7 +4,7 @@ const db = require("../models");
 let passport = require("../config/passport");
 
 
-router.get("/home", function (req, res) {
+router.get("/", function (req, res) {
     console.log(req.user);
     if (!req.user) {
             res.render("index");
