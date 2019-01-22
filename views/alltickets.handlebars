@@ -9,8 +9,10 @@
             <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownSearch">
                 Search
             </button>
-                <a href="clear-tickets" class="btn btn-outline-danger" id="clearall" role="button" aria-disabled="true">Delete all</a>
-
+            <a href="clear-tickets" class="btn btn-outline-danger" id="clearall" role="button" aria-disabled="true">Delete
+                all</a>
+<a href="/ticket" class="btn" id="nav-btn" role="button" aria-disabled="true">Create New
+            </a>
             <ul class="right">
                 <img id="logo-img" src="/assets/images/blade.jpg">
             </ul>
@@ -64,51 +66,116 @@
 <!-- Modal Structure -->
 <div id="{{_id}}" class="modal">
     <div class="modal-content">
-        <p class="col">
-            <u id="job-title">{{job_title}}:</u> {{date}}</p>
-            <hr />
+            <p id="job-title" class="center">{{job_title}}</p>
+        <hr />
         <span>
-            <p id="list-title" class="center-align"></p>
+            <span>
+            <p>
+                <b id="label">DATE:</b> {{date}}</p>
+            <hr />
+            <p>
+                <b id="label">JOB TITLE:</b> {{job_title}}</p>
+            <hr />
+            <p>
+                <b id="label">COMPANY:</b> {{company}}</p>
+            <hr />
+            <p>
+                <b id="label">ADDRESS:</b> {{address}}</p>
+            <hr />
+            <p>
+                <b id="label">JOB DESCRIPTION:</b> {{job_desc}}</p>
+            <hr />
+            <p>
+                <b id="label">MATERIALS USED:</b> {{materials_used}}</p>
+            <hr />
+            <p>
+                <b id="label">EQUIPEMENT USED:</b> {{equipment_used}}</p>
+            <hr />
+            <p>
+                <b id="label">EQUIPMENT RENTED:</b> {{equipment_rented}}</p>
+            <hr />
+            <p>
+                <b id="label">HOURS:</b> {{hours}}</p>
+            <hr />
+            <p>
+                <b id="label">EMPLOYEES:</b> {{employees}}</p>
+            <hr />
+            <p id="follow-title" class="center-align">FOLLOW UP</p>
+            <hr />
+            <p>
+                <b id="label">DESCRIPTION OF FOLLOW UP:</b> {{follow_up_desc}}</p>
+            <hr />
+            <p>
+                <b id="label">MATERIALS:</b> {{follow_materials}}</p>
+            <hr />
+            <p>
+                <b id="label">EQUIPMENT NEEDED:</b> {{follow_equipment_needed}}</p>
+            <hr />
+            <p>
+                <b id="label">HOURS WORKED FOR FOLLOW UP:</b> {{follow_hours_worked}}</p>
+            <hr />
+            <p>
+                <b id="label">TOTAL HOURS:</b> {{total_hours}}</p>
+            <hr />
+            <p>
+                <b id="label">INVOICE NUMBER:</b> {{invoice_number}}</p>
+            <hr />
+        </span>
+        <br>
+        {{!-- update section of ticket form --}}
+        <p id="title-update" class="center">UPDATE TICKET</p>
+        <p class="center">(If you wish to update your ticket, fill out the form and submit it.)</p>
+        <div class="divider"></div>
+        <br>
+        <form action='update-ticket/{{id}}' method='post'>
             <div class="row">
-                <div class="input-field col s6">
-                    <input disabled value="{{company}}" id="disabled" type="text" class="validate">
-                    <label id="label" for="disabled">COMPANY NAME</label>
+                <div id="datepicker" class="col s12">
+                        <input id="ticket-date" value="{{date}}" placeholder="Date" name="date" type="text" class="datepicker">
+                        <label for="ticket-date">DATE</label>
+                    </div>
+                    <div class="input-field col s8">
+                    <input value="{{job_title}}" id="job-title" name="job_title" type="text" class="validate">
+                    <label id="label" for="job-title">JOB TITLE</label>
+                </div>
+                <div class="input-field col s8">
+                    <input value="{{company}}" id="company" name="company" type="text" class="validate">
+                    <label id="label" for="company">COMPANY NAME</label>
                 </div>
                 <div class="input-field col s6">
-                    <input disabled value="{{address}}" id="disabled" type="text" class="validate">
-                    <label id="label" for="disabled">ADDRESS</label>
+                    <input value="{{address}}" id="address" name="address" type="text" class="validate">
+                    <label id="label" for="address">ADDRESS</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input disabled value="{{job_desc}}" id="disabled" type="text" class="validate">
-                    <label id="label" for="disabled">DESCRIPTION</label>
+                    <input value="{{job_desc}}" id="job-desc" name="job_desc" type="text" class="validate">
+                    <label id="label" for="job-desc">DESCRIPTION</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s6">
-                    <input disabled value="{{materials_used}}" id="disabled" type="text" class="validate">
-                    <label id="label" for="disabled">MATERIALS</label>
+                    <input value="{{materials_used}}" name="materials_used" id="materials-used" type="text" class="validate">
+                    <label id="label" for="materials-used">MATERIALS</label>
                 </div>
                 <div class="input-field col s6">
-                    <input disabled value="{{equipment_used}}" id="disabled" type="text" class="validate">
-                    <label id="label" for="disabled">EQUIPMENT USED</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    <input disabled value="{{equipment_rented}}" id="disabled" type="text" class="validate">
-                    <label id="label" for="disabled">RENTED EQUIPMENT</label>
-                </div>
-                <div class="input-field col s6">
-                    <input disabled value="{{hours}}" id="disabled" type="text" class="validate">
-                    <label id="label" for="disabled">HOURS WORKED</label>
+                    <input value="{{equipment_used}}" name="equipment_used" id="equipment-used" type="text" class="validate">
+                    <label id="label" for="equipment-used">EQUIPMENT USED</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s6">
-                    <input disabled value="{{employees}}" id="disabled" type="text" class="validate">
-                    <label id="label" for="disabled">EMPLOYEES ON SITE</label>
+                    <input value="{{equipment_rented}}" name="equipment_rented" id="equipment-rented" type="text" class="validate">
+                    <label id="label" for="equipment-rented">RENTED EQUIPMENT</label>
+                </div>
+                <div class="input-field col s6">
+                    <input value="{{hours}}" id="hours" name="hours" type="text" class="validate">
+                    <label id="label" for="hours">HOURS WORKED</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input value="{{employees}}" name="employees" id="employees" type="text" class="validate">
+                    <label id="label" for="employees">EMPLOYEES ON SITE</label>
                 </div>
             </div>
             <hr />
@@ -116,39 +183,42 @@
             <hr />
             <div class="row">
                 <div class="input-field col s12">
-                    <input disabled value="{{follow_job_desc}}" id="disabled" type="text" class="validate">
-                    <label id="label" for="disabled">DESCRIPTION</label>
+                    <input value="{{follow_job_desc}}" name="follow_job_desc" id="follow-up-desc" type="text" class="validate">
+                    <label id="label" for="follow-up-desc">DESCRIPTION</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s6">
-                    <input disabled value="{{follow_materials}}" id="disabled" type="text" class="validate">
-                    <label id="label" for="disabled">MATERIALS NEEDED</label>
+                    <input value="{{follow_materials}}" name="follow_materials" id="follow-materials" type="text" class="validate">
+                    <label id="label" for="follow-materials">MATERIALS NEEDED</label>
                 </div>
                 <div class="input-field col s6">
-                    <input disabled value="{{follow_equipment_needed}}" id="disabled" type="text" class="validate">
-                    <label id="label" for="disabled">EQUIPMENT NEEDED</label>
+                    <input value="{{follow_equipment_needed}}" name="follow_equipment_needed" id="follow-equipment-needed" type="text" class="validate">
+                    <label id="label" for="follow-equipment-needed">EQUIPMENT NEEDED</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s6">
-                    <input disabled value="{{follow_hours_worked}}" id="disabled" type="text" class="validate">
-                    <label id="label" for="disabled">HOURS WORKED</label>
+                    <input value="{{follow_hours_worked}}" name="follow_hours_worked" id="follow-hours-worked" type="text" class="validate">
+                    <label id="label" for="follow-hours-worked">HOURS WORKED</label>
                 </div>
                 <div class="input-field col s6">
-                    <input disabled value="{{total_hours}}" id="disabled" type="text" class="validate">
-                    <label id="label" for="disabled">TOTAL HOURS WORKED</label>
+                    <input value="{{total_hours}}" name="total_hours" id="total-hours" type="text" class="validate">
+                    <label id="label" for="total-hours">TOTAL HOURS WORKED</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s6">
-                    <input disabled value="{{invoice_number}}" id="disabled" type="text" class="validate">
-                    <label id="label" for="disabled">INVOICE NUMBER</label>
+                    <input value="{{invoice_number}}" name="invoice_number" id="invoice-number" type="text" class="validate">
+                    <label id="label" for="invoice-number">INVOICE NUMBER</label>
                 </div>
             </div>
-        </span>
+            <div class="row">
+                <button type="submit" class="btn" id="submit-ticket">Add Comment</button>
+            </div>
+        </form>
     </div>
 </div>
 {{/each}}
 
-<script type="text/javascript" src="/assets/js/alltickets.js"></script>
+<script type="text/javascript" src="/assets/js/allTickets.js"></script>

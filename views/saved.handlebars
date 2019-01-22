@@ -1,0 +1,101 @@
+<head>
+    <link rel="stylesheet" href="/assets/css/lists.css">
+</head>
+<!-- Navigation & Intro -->
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+            <button id="nav-btn" class="btn sidenav-trigger " data-target="slide-out">menu</button>
+            <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownSearch">
+                Search
+            </button>
+            <a href="clear-lists" class="btn btn-outline-danger" id="clearall" role="button" aria-disabled="true">Delete
+                all</a>
+
+            <ul class="right">
+                <img id="logo-img" src="/assets/images/blade.jpg">
+            </ul>
+        </div>
+    </nav>
+</div>
+{{!-- searchbar options --}}
+<ul id='dropdownSearch' class='dropdown-content'>
+    <li>
+        <a id="search-item" class="" href="">Logs</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Lists</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Tickets</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Invoices</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">Help</a>
+    </li>
+    <li class="divider" tabindex="-1"></li>
+    <li>
+        <a id="search-item" href="#!">About Us</a>
+    </li>
+</ul>
+<!-- Navbar -->
+<div class="row">
+    <div class="col s6 m6 l6">
+
+        <p id="page-title" class="end">Checked Lists</p>
+        
+        {{#each saveds}}
+        <p>{{name}}</p>
+        <div class="row col s12">
+            <!-- Modal Trigger -->
+            <div class="col s2 m2 l3"></div>
+            <div class="col">
+                <a id="modal-btn" class="btn-large modal-trigger" href="#{{_id}}">
+                    <b>{{name}}</b>
+                    <b id="date"> Date:</b> {{date}}</a>
+            </div>
+            <div class="col s2 m2 l3"></div>
+        </div>
+        <div id="{{_id}}" class="modal">
+            <div class="modal-content">
+                <p>{{name}}</p>
+                <p>{{date}}</p>
+                <span>
+                    <p class="center white-text">(Click on a list to complete it)</p>
+                    <div id="collection" class="collection">
+                        <a href="#!" id="collection-item" class="collection-item">{{list_1}}</a>
+                        <a href="#!" id="collection-item" class="collection-item">{{list_2}}</a>
+                        <a href="#!" id="collection-item" class="collection-item">{{list_3}}</a>
+                        <a href="#!" id="collection-item" class="collection-item">{{list_4}}</a>
+                        <a href="#!" id="collection-item" class="collection-item">{{list_5}}</a>
+                        <a href="#!" id="collection-item" class="collection-item">{{list_6}}</a>
+                        <a href="#!" id="collection-item" class="collection-item">{{list_7}}</a>
+                        <a href="#!" id="collection-item" class="collection-item">{{list_8}}</a>
+                        <a href="#!" id="collection-item" class="collection-item">{{list_9}}</a>
+                        <a href="#!" id="collection-item" class="collection-item">{{list_10}}</a>
+                        <a href="#!" id="collection-item" class="collection-item">{{list_11}}</a>
+                        <a href="#!" id="collection-item" class="collection-item">{{list_12}}</a>
+                        <a href="#!" id="collection-item" class="collection-item">{{list_13}}</a>
+                        <a href="#!" id="collection-item" class="collection-item">{{list_14}}</a>
+                        <a href="#!" id="collection-item" class="collection-item">{{list_15}}</a>
+                        <a href="#!" id="collection-item" class="collection-item">{{list_16}}</a>
+                        <a href="#!" id="collection-item" class="collection-item">{{list_17}}</a>
+                        <a href="#!" id="collection-item" class="collection-item">{{list_18}}</a>
+                    </div>
+                </span>
+            </div>
+        </div>
+        {{/each}}
+       
+    </div>
+</div>
+
+
+<script type="text/javascript" src="/assets/js/lists.js">
+</script>

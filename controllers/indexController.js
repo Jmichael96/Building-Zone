@@ -20,11 +20,6 @@ router.get("/register", function(req, res, next){
 router.get("/login", function (req, res) {
     res.render("login");
 });
-// rou
-router.post("/login", passport.authenticate("local", {
-    successRedirect: "/home",
-    failureRedirect: "/home"
-}));
 
 // //logout redirects back to homepage
 // router.get("/logout", function (req, res) {
@@ -58,6 +53,9 @@ router.get("/locates", (req, res) =>{
 });
 router.get("/image", (req, res) =>{
     res.render("img");
+});
+router.get("/saved", (req, res) =>{
+    res.render("saved");
 });
 
 module.exports = router;

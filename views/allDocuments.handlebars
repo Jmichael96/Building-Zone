@@ -9,7 +9,11 @@
             <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownSearch">
                 Search
             </button>
-            <a href="clear-logs" class="btn btn-outline-danger" id="clearall" role="button" aria-disabled="true">Delete all</a>
+            <a href="clear-logs" class="btn btn-outline-danger" id="clearall" role="button" aria-disabled="true">Delete
+                all</a>
+                                <a href="/document" class="btn" id="nav-btn" role="button" aria-disabled="true">Create New
+                </a>
+
             <ul class="right">
                 <img id="logo-img" src="/assets/images/blade.jpg">
             </ul>
@@ -79,6 +83,54 @@
             <p>
                 <b id="note-3">NOTE THREE:</b> {{log3}}</p>
         </span>
+        <div class="divider"></div>
+        <p id="title-update" class="center">UPDATE LOG</p>
+        <p class="center">(If you wish to update your log fill out the form and submit it.)</p>
+        <div class="divider"></div>
+        <form action='update-document/{{id}}' method='post'>
+            <div class="form-group">
+                <div class="row">
+                    <div class="row">
+                        <!-- datepicker -->
+                        <div id="datepicker" class="col s4">
+                            <input id="document-date" value="{{date}}" placeholder="Date" name="date" type="text" class="datepicker black-text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- name-->
+                        <div class="input-field col s4">
+                            <input value="{{name}}" id="name" type="text" name="name" class="validate">
+                            <label class="active" for="name">Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- note 1 -->
+                        <div class="input-field col s12">
+                            <input value="{{log1}}" id="log1" class="materialize-textarea" name="log1" type="text" rows="4">
+                            <label for="log1">Note Section</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        {{!-- note two --}}
+                        <div class="input-field col s12">
+                            <input id="log2" value="{{log2}}" name="log2" type="text" class="materialize-textarea" rows="4">
+                            <label for="log2">Note Section</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        {{!-- note three --}}
+                        <div class="input-field col s12">
+                            <input type="text" value="{{log3}}" id="log3" class="materialize-textarea" name="log3" rows="4">
+                            <label for="log3">Note section</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button type="submit" class="btn btn-outline-primary" id="submit-document">Add Comment</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
     </div>
 </div>
 {{/each}}
@@ -87,4 +139,4 @@
 
 
 
-<script type="text/javascript" src="/assets/js/logs.js"></script>
+<script type="text/javascript" src="/assets/js/document.js"></script>

@@ -1,23 +1,47 @@
-<div class="container" id="form">
-  <form action="register" method="POST">
-    <div class="row">
-      <!-- job title -->
-      {{!-- <div class="input-field col s12">
-        <input type="text" id="firstname" name="firstname" placeholder="last name">
-        <label class="active" for="firstname">First Name</label>
-      </div>
-      <!-- Company name -->
-      <div class="input-field col s12">
-        <input type="text" id="lastname" name="lastname" placeholder="last name">
-        <label class="active" for="lastname">Last Name</label>
-      </div>
+    <!-- Navigation & Intro -->
+    <div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+            <button id="nav-btn" class="btn sidenav-trigger " data-target="slide-out">menu</button>
+            <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownSearch">
+                Search
+            </button>   
+            <ul class="right">
+                <img id="logo-img" src="/assets/images/blade.jpg">
+            </ul>
+        </div>
+    </nav>
     </div>
+    {{!-- searchbar options --}}
+    <ul id='dropdownSearch' class='dropdown-content'>
+                        <li>
+                            <a id="search-item" class="" href="">Logs</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">Lists</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">Tickets</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">Invoices</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">Help</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a id="search-item" href="#!">About Us</a>
+                        </li>
+                    </ul>
+    <!-- Navbar -->
+<div class="container" id="form">
+  <form action="/register" method="POST">
     <div class="row">
-      <!-- job title -->
-      <div class="input-field col s12">
-        <input type="text" id="position" name="position" placeholder="position">
-        <label class="active" for="position">Position</label>
-      </div> --}}
       <!-- Company name -->
       <div class="input-field col s12">
         <input type="text" id="username" name="username" placeholder="username">
@@ -29,11 +53,6 @@
       <div class="input-field col s12">
         <input type="password" id="password" name="password" placeholder="password">
         <label class="active" for="password">Password</label>
-      </div>
-      <!-- Company name -->
-      <div class="input-field col s12">
-        <input type="text" id="email" name="email" placeholder="email">
-        <label class="active" for="email">Email</label>
       </div>
     </div>
     <button type="submit" class="btn">Submit</button>

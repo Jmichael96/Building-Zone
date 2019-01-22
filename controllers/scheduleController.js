@@ -52,6 +52,46 @@ router.get("/clear-schedules", function(req, res){
     })
   })
 
+  router.get("/find/:id", (req, res) => {
+    db.Schedule.findOne(
+        {
+          // Using the id in the url
+          _id: mongojs.ObjectId(req.params.id)
+        },
+        function(error, found) {
+          // log any errors
+          if (error) {
+            console.log(error);
+            res.send(error);
+          }
+          else {
+            // Otherwise, send the note to the browser
+            // This will fire off the success function of the ajax request
+            console.log(found);
+            
+          }
+        }
+    );
+});
+router.post("/update-schedule/:id", function (req, res) {
+    // Create a new note and pass the req.body to the entry
+    console.log(req.body.noteId);
+    db.Schedule.findOneAndUpdate({ "_id": req.params.id }, 
+    { 
+        "from_date": req.body.from_date,
+        "to_date": req.body.to_date,
+        "description": req.body.description,
+    })
+      .then(function (doc) {
+        console.log(req.params.id);
+        console.log(doc);
+        res.redirect("/allschedules")
+      })
+      .catch(function (err) {
+        // If an error occurred, send it to the client
+        res.json(err);
+      });
+  });
 
 
 module.exports = router;

@@ -71,7 +71,7 @@ router.get("/find/:id", (req, res) => {
         }
     );
 });
-router.post("/update_log/:id", function (req, res) {
+router.post("/update-log/:id", function (req, res) {
     // Create a new note and pass the req.body to the entry
     console.log(req.body.noteId);
     db.Daily_Log.findOneAndUpdate({ "_id": req.params.id }, 
@@ -93,28 +93,5 @@ router.post("/update_log/:id", function (req, res) {
         res.json(err);
       });
   });
-
-// router.post('/update-log/:id', (req, res) => {
-//     db.Daily_Log.update({
-//         _id: mongojs.ObjectId(req.params.id)
-//       },
-//       {
-//         $set: {
-//             date: req.body.date,
-//             job_title: req.body.job_title,
-//             company: req.body.company,
-//             job_desc: req.body.job_desc,
-//             hours: req.body.hours,
-//             employees: req.body.employees,
-//         }
-//     }, function (err, result) {
-//         if (err) {
-//             console.log(err);
-//         } else {
-//             console.log("Post Updated successfully");
-//             res.redirect("/alllogs");
-//         }
-//     });
-// });
 
 module.exports = router;

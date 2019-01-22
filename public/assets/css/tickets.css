@@ -38,6 +38,10 @@
     font-size: 30px;
     color: white;
 }
+#title-update{
+    font-weight: 800;
+    font-size: 40px;
+}
 .btn-large{
     background-color: rgb(90, 0, 0);
     color: white;

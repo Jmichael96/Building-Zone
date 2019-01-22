@@ -5,18 +5,24 @@ $(document).ready(function() {
         event.preventDefault();
 
         //Grab data from sign in form
-        var userData = {
-            email: $("#email").val().trim(),
-            password: $("#password").val().trim(),
-        };
-        console.log(userData + " in public login.js");
+        // var userData = {
+        //     username: $("#username").val().trim(),
+        //     password: $("#password").val().trim(),
+        // };
         $.ajax({
-            method: "PUT",
+            method: "POST",
             url: "/login",
-            data: userData
+            data: {
+
+            username: $("#username").val().trim(),
+
+            password: $("#password").val().trim(),
+        }
+            
         }).then(function(data) {
             window.location.replace(data);
         });
+        
         console.log(data);
     });
 

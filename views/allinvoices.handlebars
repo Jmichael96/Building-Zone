@@ -9,7 +9,10 @@
             <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownSearch">
                 Search
             </button>
-            <a href="clear-invoices" class="btn btn-outline-danger" id="clearall" role="button" aria-disabled="true">Delete all</a>
+            <a href="clear-invoices" class="btn btn-outline-danger" id="clearall" role="button" aria-disabled="true">Delete
+                all</a>
+                <a href="/invoice" class="btn" id="nav-btn" role="button" aria-disabled="true">Create New
+                </a>
 
             <ul class="right">
                 <img id="logo-img" src="/assets/images/blade.jpg">
@@ -67,19 +70,21 @@
         <h3 class="center">{{company}}</h3>
         <p>
             <b>Invoice #: </b> {{invoice_num}}</p>
-            <hr />
+        <hr />
         <p>
             <b id="invoice-label">Job Description: </b> {{job_desc}}</p>
-            <hr />
+        <hr />
         <p>
             <b id="invoice-label">Materials Used: </b> {{materials_used}}</p>
-            <hr />
+        <hr />
         <p>
             <b id="invoice-label">Equipment Used: </b> {{equipment_used}}</p>
-            <hr />
+        <hr />
         <p>
             <b id="invoice-label">Days On the Job Site: </b> {{days_on_job}}</p>
-            <hr />
+        <hr />
+        <p id="invoice-label">Items, QTY, and Price</p>
+        <hr />
         <p>{{item_1}}</p>
         <p>{{qty_1}}</p>
         <p>{{price_1}}</p>
@@ -100,32 +105,226 @@
         <p>{{price_6}}</p>
         <p>
             <b id="invoice-label">Other Job Items: </b> {{other_job_items}}</p>
-            <hr />
+        <hr />
         <p>
             <b id="invoice-label">Total Item Price: </b> {{total_item_price}}</p>
-            <hr />
+        <hr />
         <p>
             <b id="invoice-label">PO Number: </b> {{po_num}}</p>
-            <hr />
+        <hr />
         <p>
             <b id="invoice-label">Mud District: </b> {{mud_district}}</p>
-            <hr />
+        <hr />
         <p>
             <b id="invoice-label">Terms of Payment: </b> {{terms}}</p>
-            <hr />
+        <hr />
         <p>
             <b id="invoice-label">Sub-Total: </b>{{sub_total}}</p>
-            <hr />
+        <hr />
         <p>
             <b id="invoice-label">Tax: </b> {{tax}}</p>
-            <hr />
+        <hr />
         <p>
             <b id="invoice-label">Total Hours: </b> {{total_hours}}</p>
-            <hr />
+        <hr />
         <p>
             <b id="invoice-label">Total Due: </b> {{total_due}}</p>
-            <hr />
+        <hr />
+        <div class="divider"></div>
+        <p id="title-update" class="center">UPDATE LOG</p>
+        <p class="center">(If you wish to update your log fill out the form and submit it.)</p>
+        <div class="divider"></div>
+        <form action='update-invoice/{{id}}' method='post'>
+            <div class="form-group">
+                <div class="row">
+                    <!-- datepicker -->
+                    <div id="datepicker" class="col s4">
+                        <input id="invoice-date" placeholder="Date" value="{{date}}" name="date" type="text" class="datepicker black-text">
+                    </div>
+                </div>
+                <div class="row center-align">
+                    <!-- invoice number -->
+                    <div class="input-field col s4">
+                        <input value="{{invoice_number}}" id="invoice-num" type="text" name="invoice_num" class="validate"
+                            placeholder="">
+                        <label class="active white-text" for="invoice">Invoice #</label>
+                    </div>
+                    <!-- Company name -->
+                    <div class="input-field col s4 ">
+                        <input id="company" value="{{company}}" type="text" name="company" class="validate" placeholder="">
+                        <label class="active white-text" for="company">Company: </label>
+                    </div>
+                    <!-- Bill to who -->
+                    <div class="input-field col s4 left">
+                        <input value="{{bill_to}}" id="bill-to" type="text" name="bill_to" class="validate" placeholder="">
+                        <label class="active white-text" for="bill-to">Bill To</label>
+                    </div>
+                </div>
+                <div class="row center-align">
+
+                </div>
+                <div class="row">
+                    <!-- job description -->
+                    <div class="input-field col s12">
+                        <input id="job-desc" class="validate" name="job_desc" value="{{job_desc}}" placeholder="" rows="5"></input>
+                        <label class="white-text" for="job-desc">Job Description</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- job description -->
+                    <div class="input-field col s4">
+                        <input id="materials-used" value="{{materials_used}}" type="text" name="materials_used" class="validate" placeholder="">
+                        <label class="active white-text" for="materials-used">Materials Used</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input id="equipment-used" value="{{equipment_used}}" type="text" name="equipment_used" class="validate" placeholder="">
+                        <label class="active white-text" for="equipment-used">Equipment Used</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input id="days-on-job" type="text" value="{{days_on_job}}" name="days_on_job" class="validate" placeholder="">
+                        <label class="active white-text" for="days-on-job">Days On Site</label>
+                    </div>
+                </div>
+                <!-- LIST OF ITEMS - QTY - PRICE -->
+                <div class="row">
+                    <div class="input-field col s2 ">
+                        <input value="{{item_1}}" id="job-item1"  type="text" name="item_1" class="validate" placeholder="">
+                        <label class="active white-text" for="job-item1">Job Items</label>
+                    </div>
+                    <div class="input-field col s2 ">
+                        <input value="{{qty_1}}" id="qty-1" type="text" name="qty_1" class="validate" placeholder="">
+                        <label class="active white-text" for="qty-1">Qty Bought</label>
+                    </div>
+                    <div class="input-field col s2 ">
+                        <input value="{{price_1}}" id="price-1" type="text" name="price_1" class="validate" placeholder="">
+                        <label class="active white-text" for="price-1">Price Per</label>
+                    </div>
+                    <div class="input-field col s2 ">
+                        <input value="{{item_2}}" id="job-item2" type="text" name="item_2" class="validate" placeholder="">
+                        <label class="active white-text" for="job-item2">Job Items</label>
+                    </div>
+                    <div class="input-field col s2 ">
+                        <input value="{{qty_2}}" id="qty-2" type="text" name="qty_2" class="validate" placeholder="">
+                        <label class="active white-text" for="qty-2">Qty Bought</label>
+                    </div>
+                    <div class="input-field col s2 ">
+                        <input value="{{price_2}}" id="price-2" type="text" name="price_2" class="validate" placeholder="">
+                        <label class="active white-text" for="price-2">Price Per</label>
+                    </div>
+                </div>
+                <!-- COLUMN -->
+                <div class="row">
+                    <div class="input-field col s2 ">
+                        <input value="{{item_3}}" id="job-item3" type="text" name="item_3" class="validate" placeholder="">
+                        <label class="active white-text" for="job-item3">Job Items</label>
+                    </div>
+                    <div class="input-field col s2 ">
+                        <input value="{{qty_3}}" id="qty-3" type="text" name="qty_3" class="validate" placeholder="">
+                        <label class="active white-text" for="qty-3">Qty Bought</label>
+                    </div>
+                    <div class="input-field col s2 ">
+                        <input value="{{price_3}}" id="price-3" type="text" name="price_3" class="validate" placeholder="">
+                        <label class="active white-text" for="price-3">Price Per</label>
+                    </div>
+                    <div class="input-field col s2 ">
+                        <input value="{{item_4}}" id="job-item4" type="text" name="item_4" class="validate" placeholder="">
+                        <label class="active white-text" for="job-item4">Job Items</label>
+                    </div>
+                    <div class="input-field col s2 ">
+                        <input value="{{qty_4}}" id="qty4" type="text" name="qty_4" class="validate" placeholder="">
+                        <label class="active white-text" for="qty-4">Qty Bought</label>
+                    </div>
+                    <div class="input-field col s2 ">
+                        <input value="{{price_4}}" id="price-4" type="text" name="price_4" class="validate" placeholder="">
+                        <label class="active white-text" for="price-4">Price Per</label>
+                    </div>
+                </div>
+                <!-- COLUMN -->
+                <div class="row">
+                    <div class="input-field col s2 ">
+                        <input value="{{item_5}}" id="job-item5" type="text" name="item_5" class="validate" placeholder="">
+                        <label class="active white-text" for="job-item5">Job Items</label>
+                    </div>
+                    <div class="input-field col s2 ">
+                        <input value="{{qty_5}}" id="qty-5" type="text" name="qty_5" class="validate" placeholder="">
+                        <label class="active white-text" for="qty-5">Qty Bought</label>
+                    </div>
+                    <div class="input-field col s2 ">
+                        <input value="{{price_5}}" id="price-5" type="text" name="price_5" class="validate" placeholder="">
+                        <label class="active white-text" for="price-5">Price Per</label>
+                    </div>
+                    <div class="input-field col s2 ">
+                        <input value="{{item_6}}" id="job-item6" type="text" name="item_6" class="validate" placeholder="">
+                        <label class="active white-text" for="job-item6">Job Items</label>
+                    </div>
+                    <div class="input-field col s2 ">
+                        <input value="{{qty_6}}" id="qty-6" type="text" name="qty_6" class="validate" placeholder="">
+                        <label class="active white-text" for="qty-6">Qty Bought</label>
+                    </div>
+                    <div class="input-field col s2 ">
+                        <input value="{{price_6}}" id="price-6" type="text" name="price_6" class="validate" placeholder="">
+                        <label class="active white-text" for="price-6">Price Per</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="other-job-items" value="{{other_job_items}}" class="validate" name="other_job_items" 
+                            rows="5">
+                        <label class="white-text" for="other_items">Other Job Items</label>
+                    </div>
+                </div>
+                <hr />
+                <!-- FINALIZING WITH TOTAL $ PO AND MUD DISTRICT -->
+                <div class="row">
+                    <div class="input-field col s4 ">
+                        <input value="{{total_item_price}}" id="total-item-price" name="total_item_price" type="text" class="validate"
+                            placeholder="">
+                        <label class="active white-text" for="total-item-price">Total Item Price</label>
+                    </div>
+                    <div class="input-field col s4 ">
+                        <input id="po-num" type="text" value="{{po_num}}" name="po_num" class="validate" placeholder="">
+                        <label class="active white-text" for="po-num">PO #</label>
+                    </div>
+                    <div class="input-field col s4 ">
+                        <input value="{{mud_district}}" id="mud-district" name="mud_district" type="text" class="validate" placeholder="">
+                        <label class="active white-text" for="mud-district">MUD District</label>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="row">
+                    <div class="input-field col s4">
+                        <input value="{{terms}}" id="payment-terms" name="terms" type="text" class="validate" placeholder="Due On Reciept">
+                        <label class="active white-text" for="payment-terms">Terms of Payment</label>
+                    </div>
+                    <div class="input-field col s3">
+                        <input value="{{sub_total}}" id="sub-total" name="sub_total" type="text" class="validate" placeholder="">
+                        <label class="active white-text" for="sub-total">Sub Total</label>
+                    </div>
+                    <div class="input-field col s3">
+                        <input value="{{tax}}" id="tax" type="text" name="tax" class="validate" placeholder="">
+                        <label class="active white-text" for="tax">Tax</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- total sum -->
+                    <div class="input-field col s4 ">
+                        <input value="{{total_hours}}" id="total-hours" name="total_hours" type="text" class="validate" placeholder="">
+                        <label class="active white-text" for="total-hours">Total Hours</label>
+                    </div>
+                    <!-- total sum -->
+                    <div class="input-field col s4 ">
+                        <input value="{{total_due}}" id="total-due" name="total_due" type="text" class="validate" placeholder="">
+                        <label class="active white-text" for="total-due">Total Due</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="submit" class="btn btn-outline-primary" id="submit-invoice">Add Comment</button>
+                </div>
+            </div>
     </div>
+    </form>
+
+</div>
 </div>
 {{/each}}
 <script type="text/javascript" src="/assets/js/invoices.js"></script>

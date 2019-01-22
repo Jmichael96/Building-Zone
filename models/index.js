@@ -8,4 +8,5 @@ module.exports ={
     Document: require("./Document"),
     Valve: require("./Valve"),
     Image: require("./Image"),
+    Saved: require("./Saved"),
 };

@@ -53,10 +53,10 @@ let TicketSchema = new Schema({
     invoice_number:{
         type: String,
     },
-    images:{
-        data: Buffer, 
-        contentType: String, 
-    }
+    // images:{
+    //     data: Buffer, 
+    //     contentType: String, 
+    // }
 });
 
 // // This creates our model from the above schema, using mongoose's model method

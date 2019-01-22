@@ -59,6 +59,8 @@ let map = require("./controllers/mapController");
 app.use(map);
 let valve = require("./controllers/valveController");
 app.use(valve);
+let saved = require("./controllers/savedController");
+app.use(saved);
 
 let MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/capstone';
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });

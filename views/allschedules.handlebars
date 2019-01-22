@@ -9,7 +9,10 @@
             <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownSearch">
                 Search
             </button>
-            <a href="clear-lists" class="btn btn-outline-danger" id="clearall" role="button" aria-disabled="true">Delete all</a>
+            <a href="clear-lists" class="btn btn-outline-danger" id="clearall" role="button" aria-disabled="true">Delete
+                all</a>
+                <a href="/scheduler" class="btn" id="nav-btn" role="button" aria-disabled="true">Create New
+                </a>
 
             <ul class="right">
                 <img id="logo-img" src="/assets/images/blade.jpg">
@@ -73,6 +76,37 @@
                 <b id="company">COMPANY:</b> {{description}}</p>
             <hr />
         </span>
+        <div class="divider"></div>
+        <p id="title-update" class="center">UPDATE LOG</p>
+        <p class="center">(If you wish to update your log fill out the form and submit it.)</p>
+        <div class="divider"></div>
+        <form action='update-schedule/{{id}}' method='post'>
+            <div class="form-group">
+                <div class="row">
+                    <div id="datepicker" class="col s5">
+                        <input id="from-date" value="{{from_date}}" placeholder="Date" name="from_date" type="text" class="datepicker">
+                    </div>
+                    <div class="input-field col s1">
+                        <input disabled value="TO" class="white-text" id="invoice" type="text" name="to_date" class="validate"
+                            placeholder="">
+                    </div>
+                    <div id="datepicker" class="col s5">
+                        <input id="to-date" value="{{to_date}}" placeholder="Date" name="to_date" type="text" class="datepicker">
+                    </div>
+                    <div class="row">
+                        <!-- description -->
+                        <div class="input-field col s12">
+                            <input id="description" value="{{description}}" class="validate" name="description" placeholder="" rows="5">
+                            <label class="active" for="description">Description</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button type="submit" class="btn btn-outline-primary" id="submit-schedule">Add Comment</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
     </div>
 </div>
 {{/each}}
