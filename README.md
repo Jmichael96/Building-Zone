@@ -12,5 +12,12 @@ were buried for years, we wasted days destroying property to relocate lines. whi
 and time that we could have been using to work on a more urgent problem.
 
 ## TOOLS BEING USED FOR THIS APPLICATION  
-
+- Express
+- JavaScript
+- JQuery
+- Passport
+- MongoDB
+- Mongoose
+- Handlebars
+- CSS3
 
