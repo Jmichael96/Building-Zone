@@ -29,31 +29,12 @@ body{
     border: 1px solid black;
     color: white;
 }
-#job-title{
-    font-size: 20px;
+#modal-titles{
+    font-size: 25px;
     font-weight: 900;
     color: white;
 }
-#company{
-    font-size: 25px;
-    color: white;
-    font-weight: 800;
-}
-#description{
-    font-size: 25px;
-    color: white;
-    font-weight: 800
-}
-#hours{
-    font-size: 25px;
-    color: white;
-    font-weight: 800;
-}
-#employees{
-    font-size: 25px;
-    color: white;
-    font-weight: 800;
-}
+/* title for the update section */
 #title-update{
     font-size: 40px;
     margin: 10px;
@@ -96,4 +77,14 @@ body{
     margin-bottom: 80px;
     box-shadow: 0 4px 10px black, 0 5px 15px black, 0 6px 20px black;
     border-radius: 4px;
+}
+
+#submit-log{
+    background-color: white;;
+    color: rgb(90, 0, 0);
+    box-shadow: 0 2px 8px black;
+}
+#submit-log:hover{
+    color: white;
+    background-color: rgb(90, 0, 0);
 }

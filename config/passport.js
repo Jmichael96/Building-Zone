@@ -3,18 +3,21 @@ var LocalStrategy = require("passport-local").Strategy;
 var db = require("../models");
 // // Telling passport we want to use a Local Strategy. In other words, we want login with a username/email and password
 passport.use(new LocalStrategy(
-    function(username, password, done) {
+    {
+
+        usernameField: "email"
+    },
+    function (email, password, done) {
         // When a user tries to sign in this code runs
         db.User.findOne({
             where: {
-                username: username
+                email: email
             },
-            raw: true
-        }).then(function(dbUser) {
+        }).then(function (dbUser) {
             // If there"s no user with the given email
             if (!dbUser) {
                 return done(null, false, {
-                    message: "Incorrect username."
+                    message: "Incorrect email."
                 });
             }
             // If there is a user with the given email, but the password the user gives us is incorrect
@@ -29,17 +32,24 @@ passport.use(new LocalStrategy(
         });
     }
 ));
-  passport.serializeUser(function(user, done) {
-    console.log('Serializing: ', user);
-    done(null, user.id);
+passport.serializeUser(function(user, cb) {
+    cb(null, user);
   });
   
-  passport.deserializeUser(function(id, done) {
-    console.log('Deserializing: ', id);
-    db.User.findById(id, function (err, user) {
-      done(err, user);
-    });
+  passport.deserializeUser(function(obj, cb) {
+    cb(null, obj);
   });
+// passport.serializeUser(function (user, done) {
+//     console.log('Serializing: ', user);
+//     done(null, user.id);
+// });
+
+// passport.deserializeUser(function (id, done) {
+//     console.log('Deserializing: ', id);
+//     db.User.findById(id, function (err, user) {
+//         done(err, user);
+//     });
+// });
 
 
-  module.exports = passport;
+module.exports = passport;

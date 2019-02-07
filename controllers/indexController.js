@@ -1,12 +1,20 @@
 let express = require('express');
 let router = express.Router();
-let passport = require("../config/passport");
 // let passport = require("../config/passport");
-// var isAuthenticated = require("../config/middleware/isAuthenticated");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 
-router.get("/", function(req, res){
-    res.render("index");
+router.get("/register", function(req, res){
+
+    if(req.user){
+        res.redirect("/users");
+    }
+    res.render("register");
 })
+
+router.get("/", (req,res)=>{
+    res.render("index");
+});
+
 // router.get("/home", function(req, res){
 //     console.log(req.user);
 //     if(req.user) {
@@ -17,15 +25,17 @@ router.get("/", function(req, res){
 router.get("/register", function(req, res, next){
     res.render("register");
 });
+
 router.get("/login", function (req, res) {
+    if(req.user){
+        res.redirect("/users");
+    }
     res.render("login");
 });
 
-// //logout redirects back to homepage
-// router.get("/logout", function (req, res) {
-//     req.logout();
-//     res.redirect("/home");
-// });
+router.get("/users", isAuthenticated, function(req, res) {
+    res.render("users");
+});
 
 router.get("/invoice", (req, res)=>{
     res.render("invoice");
