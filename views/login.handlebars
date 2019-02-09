@@ -1,48 +1,48 @@
-    <!-- Navigation & Intro -->
-    <div class="navbar-fixed">
-    <nav>
-        <div class="nav-wrapper">
-            <button id="nav-btn" class="btn sidenav-trigger " data-target="slide-out">menu</button>
-            <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownSearch">
-                Search
-            </button>   
-            <ul class="right">
-                <img id="logo-img" src="/assets/images/blade.jpg">
-            </ul>
-        </div>
-    </nav>
+<!-- Navigation & Intro -->
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
+      <button id="nav-btn" class="btn sidenav-trigger " data-target="slide-out">menu</button>
+      <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownSearch">
+        Search
+      </button>
+      <ul class="right">
+        <img id="logo-img" src="/assets/images/blade.jpg">
+      </ul>
     </div>
-    {{!-- searchbar options --}}
-    <ul id='dropdownSearch' class='dropdown-content'>
-                        <li>
-                            <a id="search-item" class="" href="">Logs</a>
-                        </li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li>
-                            <a id="search-item" href="#!">Lists</a>
-                        </li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li>
-                            <a id="search-item" href="#!">Tickets</a>
-                        </li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li>
-                            <a id="search-item" href="#!">Invoices</a>
-                        </li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li>
-                            <a id="search-item" href="#!">Help</a>
-                        </li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li>
-                            <a id="search-item" href="#!">About Us</a>
-                        </li>
-                    </ul>
-    <!-- Navbar -->
+  </nav>
+</div>
+{{!-- searchbar options --}}
+<ul id='dropdownSearch' class='dropdown-content'>
+  <li>
+    <a id="search-item" class="" href="">Logs</a>
+  </li>
+  <li class="divider" tabindex="-1"></li>
+  <li>
+    <a id="search-item" href="#!">Lists</a>
+  </li>
+  <li class="divider" tabindex="-1"></li>
+  <li>
+    <a id="search-item" href="#!">Tickets</a>
+  </li>
+  <li class="divider" tabindex="-1"></li>
+  <li>
+    <a id="search-item" href="#!">Invoices</a>
+  </li>
+  <li class="divider" tabindex="-1"></li>
+  <li>
+    <a id="search-item" href="#!">Help</a>
+  </li>
+  <li class="divider" tabindex="-1"></li>
+  <li>
+    <a id="search-item" href="#!">About Us</a>
+  </li>
+</ul>
+<!-- Navbar -->
 <h1>
   Authentication 🚀 </h1>
 <!-- main -->
-{{!-- <div class="main">
+<div class="container">
   <!--signin-form-->
   <div class="w3">
     <div class="signin-form profile">
@@ -50,7 +50,7 @@
       <form action="login" method="post">
         <div class="form-group">
           <label for="username">username</label>
-          <input type="username" class="form-control" name="username" id="username" placeholder="username">
+          <input type="text" class="form-control" name="username" id="username" placeholder="username">
         </div>
         <div class="form-group">
           <label for="password">Password</label>
@@ -62,20 +62,21 @@
       <p>Or sign up <a href="/">here</a></p>
     </div>
   </div>
+</div>
+
+{{!-- <div class="container">
+  <form action="/login" method="POST">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="text" name="username" class="form-control" id="username" placeholder="username">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" name="password" class="form-control" id="password-input" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-default">Login</button>
+  </form>
 </div> --}}
-
-
-        <form class="login">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
-          </div>
-          <button type="submit" class="btn btn-default">Login</button>
-        </form>
 
 {{!--
 <script type="text/javascript">

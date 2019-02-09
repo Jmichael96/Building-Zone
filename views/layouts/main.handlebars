@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    
+
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="/assets/js/main.js"></script>
@@ -23,13 +23,66 @@
 </head>
 
 <body>
-
+    <!-- Navigation & Intro -->
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <button id="nav-btn" class="btn sidenav-trigger " data-target="slide-out">menu</button>
+                <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownSearch">
+                    Search
+                </button>
+                {{!-- if user isnt logged in --}}
+                {{#unless loginStatus}}
+                <button id="nav-btn" class="btn z-depth-5"><a href="/register" >Sign Up</a></button>
+                <button id="nav-btn" class="btn z-depth-5"><a href="/login">Login</a></button>
+                {{/unless}}
+                {{#if loginStatus}}
+                <span>Welcome {{User.username}}!</span>
+                {{/if}}
+                <ul class="right">
+                    <img id="logo-img" src="/assets/images/blade.jpg">
+                </ul>
+            </div>
+        </nav>
+    </div>
+    {{!-- searchbar options --}}
+    <ul id='dropdownSearch' class='dropdown-content'>
+        <li>
+            <a id="search-item" class="" href="">Logs</a>
+        </li>
+        <li class="divider" tabindex="-1"></li>
+        <li>
+            <a id="search-item" href="#!">Lists</a>
+        </li>
+        <li class="divider" tabindex="-1"></li>
+        <li>
+            <a id="search-item" href="#!">Tickets</a>
+        </li>
+        <li class="divider" tabindex="-1"></li>
+        <li>
+            <a id="search-item" href="#!">Invoices</a>
+        </li>
+        <li class="divider" tabindex="-1"></li>
+        <li>
+            <a id="search-item" href="#!">Help</a>
+        </li>
+        <li class="divider" tabindex="-1"></li>
+        <li>
+            <a id="search-item" href="#!">About Us</a>
+        </li>
+    </ul>
     <!-- side navbar -->
     <ul id="slide-out" class="sidenav center-align">
         <img id="nav-img" src="/assets/images/blade.jpg">
+        {{#unless loginStatus}}
         <p id="nav-name" class="center-align">Jeffrey VanHorn</p>
-        <p id="nav-number">832-334-9639
-            <p>
+        <p id="nav-number">832-334-9639<p>
+        {{/unless}}
+
+        {{#if loginStatus}}
+        <br>
+        <span id="hello">Hello {{User.username}}!</span>
+        {{/if}}
                 <!-- Grid column -->
                 <div id="contact-col" class="row col s6 center-align">
                     <a class="btn btn-floating z-depth-5" href="">
@@ -49,19 +102,29 @@
                         <p>Facbook</p>
                     </a>
                 </div>
-                
+
                 <div class="row center-align">
                     <a id="nav-btn" href="/" class="btn z-depth-5">Home</a>
                 </div>
+                {{!-- if user isnt logged in  --}}
+                {{#unless loginStatus}}
                 <div class="row center-align">
                     <a id="nav-btn" href="/register" class="btn pulse z-depth-5">Sign Up</a>
                 </div>
                 <div class="row center-align">
-                    <a id="nav-btn" href="/login" class="btn z-depth-5">Login</a>
+                <a href="/login" class="btn z-depth-5">Login</a>
                 </div>
+                {{/unless}}
+                {{!-- end --}}
+                {{!-- if user IS logged in --}}
+                {{#if loginStatus}}
                 <div class="row center-align">
                     <a id="nav-btn" class='dropdown-trigger btn z-depth-5' href='#' data-target='dropdown1'>contacts</a>
                 </div>
+                <div class="row center-align">
+                    <a id="nav-btn" href="/logout" class="btn z-depth-5">Logout</a>
+                </div>
+                {{/if}}
                 <!-- Dropdown Trigger -->
                 <!-- Dropdown Structure -->
                 <ul id='dropdown1' class='dropdown-content'>
@@ -87,7 +150,7 @@
 
     <!-- FOOTER -->
     <footer id="footer" class="page-footer">
-        <p class="center">© 2018 Copyright Jeffrey VanHorn</p>        
+        <p class="center">© 2018 Copyright Jeffrey VanHorn</p>
     </footer>
 </body>
 

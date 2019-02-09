@@ -1,34 +1,43 @@
 let express = require('express');
 let router = express.Router();
+const db = require("../models");
 // let passport = require("../config/passport");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
-router.get("/register", function(req, res){
-
-    if(req.user){
-        res.redirect("/users");
-    }
-    res.render("register");
+router.get("/landing", (req, res) =>{
+    res.render("landing")
 })
-
-router.get("/", (req,res)=>{
-    res.render("index");
+router.get("/",(req, res) =>{
+    res.redirect("/home");
+})
+router.get("/home", function (req, res) {
+    console.log(req.user);
+    if (req.user) {
+        db.User.findOne({ id: req.user, 
+            raw: true
+        }).then(function (dbUser) {
+            res.render("index", {
+                loginStatus: true, 
+                User: req.user
+            });
+            console.log("welcome " + req.user);
+        })
+        // send data to handlebars and render
+    } else {
+        res.redirect("/")
+    }
 });
-
-// router.get("/home", function(req, res){
-//     console.log(req.user);
-//     if(req.user) {
-//         res.render("/home");
-//     }
-//     res.redirect("/register");
-// });
 router.get("/register", function(req, res, next){
     res.render("register");
 });
-
+//logout redirects back to homepage
+router.get("/logout", function (req, res) {
+    req.logout();
+    res.redirect("/");
+});
 router.get("/login", function (req, res) {
     if(req.user){
-        res.redirect("/users");
+        res.redirect("/");
     }
     res.render("login");
 });

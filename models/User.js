@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-    email: {
+    username: {
         type: String,
         required: true
     },
@@ -19,6 +19,15 @@ const UserSchema = new Schema({
     }
 });
 
+// Define schema methods
+UserSchema.methods = {
+	checkPassword: function(inputPassword) {
+		return bcrypt.compareSync(inputPassword, this.password)
+	},
+	hashPassword: plainTextPassword => {
+		return bcrypt.hashSync(plainTextPassword, 10)
+	}
+}
 // Hash passwords before saving to database
 UserSchema.pre('validate', function(next) {
     bcrypt.genSalt(10, (err, result) => {

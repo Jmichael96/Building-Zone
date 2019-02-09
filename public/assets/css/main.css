@@ -67,6 +67,12 @@ header,
     transform: rotate(360deg);
   }
 }
+/* name tag for authenticated users */
+#hello{
+  font-size: 30px;
+  color: white;
+  font-weight: 500;
+}
 /* tagging all nav btns */
 #nav-btn{
   background-color: rgb(90, 0, 0);
