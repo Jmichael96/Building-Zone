@@ -1,56 +1,11 @@
 <head>
     <link rel="stylesheet" href="/assets/css/invoices.css">
 </head>
-<!-- Navigation & Intro -->
-<div class="navbar-fixed">
-    <nav>
-        <div class="nav-wrapper">
-            <button id="nav-btn" class="btn sidenav-trigger " data-target="slide-out">menu</button>
-            <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownSearch">
-                Search
-            </button>
-            <a href="clear-invoices" class="btn btn-outline-danger" id="clearall" role="button" aria-disabled="true">Delete
-                all</a>
-                <a href="/invoice" class="btn" id="nav-btn" role="button" aria-disabled="true">Create New
-                </a>
+<a href="clear-invoices" class="btn btn-outline-danger" id="clearall" role="button" aria-disabled="true">Delete all</a>
 
-            <ul class="right">
-                <img id="logo-img" src="/assets/images/blade.jpg">
-            </ul>
-        </div>
-    </nav>
-</div>
-{{!-- searchbar options --}}
-<ul id='dropdownSearch' class='dropdown-content'>
-    <li>
-        <a id="search-item" class="" href="">Logs</a>
-    </li>
-    <li class="divider" tabindex="-1"></li>
-    <li>
-        <a id="search-item" href="#!">Lists</a>
-    </li>
-    <li class="divider" tabindex="-1"></li>
-    <li>
-        <a id="search-item" href="#!">Tickets</a>
-    </li>
-    <li class="divider" tabindex="-1"></li>
-    <li>
-        <a id="search-item" href="#!">Invoices</a>
-    </li>
-    <li class="divider" tabindex="-1"></li>
-    <li>
-        <a id="search-item" href="#!">Help</a>
-    </li>
-    <li class="divider" tabindex="-1"></li>
-    <li>
-        <a id="search-item" href="#!">About Us</a>
-    </li>
-</ul>
-<!-- Navbar -->
 <div class="container">
     <p id="page-title" class="center-align">ALL INVOICES</p>
 </div>
-
 {{#each Invoice}}
 <div class="row col s12">
     <div class="col s2 m2 l2"></div>

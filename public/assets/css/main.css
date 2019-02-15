@@ -16,7 +16,7 @@ header,
     body,
     header,
     .intro-2 {
-      height: 1100px;
+      height: 1000px;
     }
   }
   @media (min-width: 800px) and (max-width: 850px) {
@@ -128,7 +128,7 @@ header,
     width: 100%;
 }
 #intro-quote{
-  margin-top: 250px;
+  margin-top: 150px;
   font-size: 60px;
   font-weight: 800;
   color: rgb(0, 0, 0);
