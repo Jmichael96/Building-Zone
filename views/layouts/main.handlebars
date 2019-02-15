@@ -29,7 +29,7 @@
             <div class="nav-wrapper">
                 <button id="nav-btn" class="btn sidenav-trigger " data-target="slide-out">menu</button>
                 <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownSearch">
-                    Search
+                    Quick Search
                 </button>
                 {{!-- if user isnt logged in --}}
                 {{#unless loginStatus}}
@@ -103,11 +103,11 @@
                     </a>
                 </div>
 
+                {{!-- if user isnt logged in  --}}
+                {{#unless loginStatus}}
                 <div class="row center-align">
                     <a id="nav-btn" href="/" class="btn z-depth-5">Home</a>
                 </div>
-                {{!-- if user isnt logged in  --}}
-                {{#unless loginStatus}}
                 <div class="row center-align">
                     <a id="nav-btn" href="/register" class="btn pulse z-depth-5">Sign Up</a>
                 </div>
@@ -118,6 +118,9 @@
                 {{!-- end --}}
                 {{!-- if user IS logged in --}}
                 {{#if loginStatus}}
+                <div class="row center-align">
+                    <a id="nav-btn" href="/home" class="btn z-depth-5">Home</a>
+                </div>
                 <div class="row center-align">
                     <a id="nav-btn" class='dropdown-trigger btn z-depth-5' href='#' data-target='dropdown1'>contacts</a>
                 </div>

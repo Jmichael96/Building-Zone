@@ -2,18 +2,29 @@ let express = require('express');
 let router = express.Router();
 const db = require("../models");
 // let passport = require("../config/passport");
-var isAuthenticated = require("../config/middleware/isAuthenticated");
+const isAuthenticated = require("../config/middleware/isAuthenticated");
+const sessionChecker = require("../config/middleware/sessionChecker");
 
 router.get("/landing", (req, res) =>{
     res.render("landing")
 })
 router.get("/",(req, res) =>{
-    res.redirect("/home");
+    res.redirect("/landing");
 })
+
+// router.get("/home", (req, res) =>{
+//     if(req.session.user && req.cookies.user_sid){
+//         res.render("home");
+//     }
+//     else{
+//         res.redirect("/login");
+//     };
+// });
+
 router.get("/home", function (req, res) {
     console.log(req.user);
     if (req.user) {
-        db.User.findOne({ id: req.user, 
+        db.User.findOne({ _id: req.user , 
             raw: true
         }).then(function (dbUser) {
             res.render("index", {
@@ -35,19 +46,50 @@ router.get("/logout", function (req, res) {
     req.logout();
     res.redirect("/");
 });
-router.get("/login", function (req, res) {
+
+router.get("/login", sessionChecker, function (req, res) {
     if(req.user){
-        res.redirect("/");
+        res.redirect("/home");
+        return;
     }
     res.render("login");
+    return;
 });
 
-router.get("/users", isAuthenticated, function(req, res) {
-    res.render("users");
-});
+// router.get("/users", isAuthenticated, function(req, res) {
+//     res.render("users");
+// });
 
 router.get("/invoice", (req, res)=>{
-    res.render("invoice");
+    if (req.user) {
+        db.User.findOne({ _id: req.user , 
+            raw: true
+        }).then(function (dbUser) {
+            res.render("invoice", {
+                loginStatus: true, 
+                User: req.user
+            });
+            console.log("welcome " + req.user);
+        })
+        // send data to handlebars and render
+    } else {
+        res.redirect("/signup")
+    }
+    // console.log(req.user);
+    // db.Invoice.find().then((dbInvoice)=>{
+    //     db.User.findOne({
+    //         _id: req.user, 
+    //         raw: true,
+    //     })
+    //     .then((dbUser) =>{
+    //         res.render("invoice", {
+    //             loginStatus: true,
+    //             data: dbInvoice, dbUser,
+    //             User: req.user,
+    //         });
+    //         console.log();
+    //     });    
+    // })
 });
 router.get("/daily_log", (req, res)=>{
     res.render("log")

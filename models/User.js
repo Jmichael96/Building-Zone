@@ -1,7 +1,5 @@
 const bcrypt = require('bcrypt-nodejs');
-
 const mongoose = require('mongoose');
-
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
@@ -13,6 +11,7 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+
     userCreated: {
       type: Date,
       default: Date.now
@@ -38,11 +37,6 @@ UserSchema.pre('validate', function(next) {
         }
     });
 });
-// UserSchema.methods.validPassword = function(password){
-//     return bcrypt.compareSync(password, this.password)
-// };
-
 var User = mongoose.model("User", UserSchema);
-
 // Export the User model
 module.exports = User;

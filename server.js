@@ -3,12 +3,21 @@ let app = express();
 let exphbs = require('express-handlebars');
 let PORT = process.env.PORT || 8080;
 let mongoose = require('mongoose');
+const methodOverride = require("method-override");
+const cookieParser = require('cookie-parser');
 let logger = require("morgan");
 let passport = require("./config/passport");
 let session = require("express-session");
+const MongoStore = require('connect-mongo')(session)
 let bodyParser = require("body-parser")
-let routes = require("./controllers");
+// let routes = require("./controllers");
 
+app.use(logger("dev"));
+app.use(express.static("public"));
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+app.use(methodOverride('X-HTTP-Method-Override'));
 let MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/capstone';
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 let db = mongoose.connection;
@@ -20,29 +29,44 @@ db.once('open', () => {
 db.on('error', (err) => {
   console.log('Database error: ', err);
 });
-
-
-app.use(logger("dev"));
-app.use(express.json());
-app.use(express.static("public"));
-// app.use(require('cookie-parser')());
-
 app.use(
-  bodyParser.urlencoded({
-      extended: false
-  })
-);
-app.use(
-  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
-);
+  session({
+    key: "user_sid",
+    secret: "keyboard cat", resave: true,
+    saveUninitialized: false,
+    cookie:{
+      expires: 60000000,
+    },
+    store: new MongoStore({
+      mongooseConnection: db
+    })
+}));
 app.use(passport.initialize());
 app.use(passport.session());
+// This middleware will check if user's cookie is still saved in browser and user is not set, then automatically log the user out.
+// This usually happens when you stop your express server after login, your cookie still remains saved in the browser.
+// Session-persisted message middleware
+app.use(function(req, res, next){
+  var err = req.session.error,
+      msg = req.session.notice,
+      success = req.session.success;
+
+  delete req.session.error;
+  delete req.session.success;
+  delete req.session.notice;
+
+  if (err) res.locals.error = err;
+  if (msg) res.locals.notice = msg;
+  if (success) res.locals.success = success;
+
+  next();
+});
 
 app.engine(
-    "handlebars",
-    exphbs({
-        defaultLayout: "main"
-    })
+  "handlebars",
+  exphbs({
+    defaultLayout: "main"
+  })
 );
 app.set("view engine", "handlebars");
 
@@ -76,16 +100,16 @@ app.use(saved);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-    var err = new Error('File Not Found');
-    err.status = 404;
-    next(err);
-  });
-  // error handler
-  // define as the last app.use callback
-  app.use(function (err, req, res, next) {
-    res.status(err.status || 500);
-    res.send(err.message);
-  });
+  var err = new Error('File Not Found');
+  err.status = 404;
+  next(err);
+});
+// error handler
+// define as the last app.use callback
+app.use(function (err, req, res, next) {
+  res.status(err.status || 500);
+  res.send(err.message);
+});
 app.listen(PORT, function () {
   console.log("Visit http://localhost:%s/ in your browser.", PORT);
 });

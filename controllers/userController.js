@@ -3,6 +3,7 @@ let router = express.Router();
 let User = require("../models/User");
 let passport = require("../config/passport");
 const mongoose = require("mongoose");
+const sessionChecker = require("../config/middleware/sessionChecker");
 
 // this route is just used to get the user basic info
 router.get('/user', (req, res, next) => {
@@ -14,51 +15,74 @@ router.get('/user', (req, res, next) => {
     return res.json({ user: null })
   }
 })
-// post route for login
-// router.post(
-//   '/login',
-//   (req, res, next) =>{
-//     console.log(req.body)
-//     console.log('================')
-//     next()
-//   },
-//   passport.authenticate('local'),
-//   (req, res) => {
-//     console.log('POST to /login')
-//     const user = JSON.parse(JSON.stringify(req.user)) // hack
-//     const cleanUser = Object.assign({}, user)
-//     if (cleanUser.local) {
-//       console.log(`Deleting ${cleanUser.local.password}`)
-//       delete cleanUser.local.password
-//     }
-//     res.json({ user: cleanUser })
-//   });
-
-// post route for signup
-router.post('/register', (req, res) => {
-  const { username, password } = req.body
-	// ADD VALIDATION
-	User.findOne({ 'username': username }, (err, userMatch) => {
-		if (userMatch) {
-			return res.json({
-				error: `Sorry, already a user with the username: ${username}`
-			})
-		}const user = new User({
-			'_id': new mongoose.Types.ObjectId(),
-			'username': username,
-			'password': password
-		})
-		user.save((err, savedUser) => {
-			if (err) return res.json(err)
-			return res.json(savedUser)
-		})
-		
-	})
-})
+// route for when user logs in
 router.post("/login", passport.authenticate("local", {
-  successRedirect: "/",
+  successRedirect: "/home",
   failureRedirect: "/login"
 }));
+
+// router.route("/login")
+// .get(sessionChecker, (req, res) =>{
+// 	res.render("login");
+// })
+// .post((req, res) =>{
+// 	const { username, password } = req.body;
+
+// 	User.findOne({where: { username }})
+// 	.then(function(user){
+// 		if(!user){
+// 			res.redirect("/login");
+// 		}
+// 		else if (!user.validatePassword(password)){
+// 			res.redirect("/login");
+// 		}
+// 		else{
+// 			req.session.user = user.dataValues;
+// 			res.redirect("/home");
+// 		};
+// 	});
+// });
+
+// post route for signup
+// router.post('/register', (req, res) => {
+  // const { username, password } = req.body
+	// // ADD VALIDATION
+	// User.findOne({ 'username': username }, (err, userMatch) => {
+	// 	if (userMatch) {
+	// 		return res.json({
+	// 			error: `Sorry, already a user with the username: ${username}`
+	// 		})
+	// 	}const user = new User({
+	// 		'_id': new mongoose.Types.ObjectId(),
+	// 		'username': username,
+	// 		'password': password
+	// 	})
+	// 	user.save((err, savedUser) => {
+	// 		if (err) return res.json(err)
+	// 		return res.json(savedUser)
+	// 	})
+		
+// 	})
+// })
+router.route("/register")
+.get(sessionChecker, (req,res) =>{
+	res.render("register");
+})
+.post((req,res) =>{
+	const { username, password } = req.body;
+	User.create({
+		'_id': new mongoose.Types.ObjectId(),
+		'username': username,
+		'password': password,
+	})
+	.then(user =>{
+		req.session.user = user.dataValues;
+		res.redirect('/home');
+	})
+	.catch(err =>{
+		res.redirect("/register");
+	}) 
+})
 
 // old route for registering
 // router.post('/register', (req, res) => {
