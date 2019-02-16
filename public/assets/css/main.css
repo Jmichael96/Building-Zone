@@ -5,6 +5,21 @@ body{
   background-size: cover;
   background-attachment: fixed;
 }
+/* top right logo img */
+#logo-img{
+  height: 60px;
+  width: 60px;
+  animation: logo-spin infinite 18s linear;
+}
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 html,
 body,
 header,
@@ -36,14 +51,8 @@ header,
 #dropdown1{
   background-color: rgb(90, 0, 0);
 }
-#contact-item{
-  color: white;
-}
-#contact-item:hover{
-  color: black;
-}
 /* dropdown search style */
-#dropdownSearch{
+#dropdownCreate{
   background-color: rgb(90, 0, 0);
   color: white;
 }
@@ -52,20 +61,6 @@ header,
 }
 #search-item:hover{
   color: black;
-}
-/* top right logo img */
-#logo-img{
-  height: 60px;
-  width: 60px;
-  animation: logo-spin infinite 18s linear;
-}
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 /* name tag for authenticated users */
 #hello{
@@ -215,7 +210,11 @@ header,
   background-color: rgb(255, 255, 255);
   color: black;
 }
-      /* label focus color */
+#contact-send:hover{
+    color: white;
+    background-color: rgb(90, 0, 0);
+}
+/* label focus color */
 .input-field input[type=text]:focus + label {
   color: rgb(255, 255, 255);
   text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff,;    
@@ -255,16 +254,12 @@ header,
 /* valid color */
 .input-field input[type=text].valid {
   border-bottom: 1px solid #ffffff;
-  box-shadow: 0 0 2px #ffffff, 0 0px 3px #ffffff, 0 0px 4px #ffffff;
   color: rgb(255, 255, 255);
-  text-shadow: 0 0 10px #fdfdfd, 0 0 20px #fdfdfd;    
 }
 /* valid color */
 .input-field input[type=email].valid {
   border-bottom: 1px solid #ffffff;
-  box-shadow: 0 0 2px #ffffff, 0 0px 3px #ffffff, 0 0px 4px #ffffff;
   color: rgb(255, 255, 255);
-  text-shadow: 0 0 10px #fdfdfd, 0 0 20px #fdfdfd;    
 }
 /* invalid color */
 .input-field input[type=email].invalid {

@@ -28,13 +28,13 @@
         <nav>
             <div class="nav-wrapper">
                 <button id="nav-btn" class="btn sidenav-trigger " data-target="slide-out">menu</button>
-                <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownSearch">
-                    Quick Search
+                <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownCreate">
+                    Quick Create
                 </button>
                 {{!-- if user isnt logged in --}}
                 {{#unless loginStatus}}
-                <button id="nav-btn" class="btn z-depth-5"><a href="/register" >Sign Up</a></button>
-                <button id="nav-btn" class="btn z-depth-5"><a href="/login">Login</a></button>
+                <a href="/register"><button id="nav-btn" class="btn z-depth-5">Sign Up</button></a>
+                <a href="/login"><button id="nav-btn" class="btn z-depth-5">Login</button></a>
                 {{/unless}}
                 {{#if loginStatus}}
                 <span>Welcome {{User.username}}!</span>
@@ -46,21 +46,21 @@
         </nav>
     </div>
     {{!-- searchbar options --}}
-    <ul id='dropdownSearch' class='dropdown-content'>
+    <ul id='dropdownCreate' class='dropdown-content'>
         <li>
-            <a id="search-item" class="" href="">Logs</a>
+            <a id="search-item" href="/daily_log">Create Log</a>
         </li>
         <li class="divider" tabindex="-1"></li>
         <li>
-            <a id="search-item" href="#!">Lists</a>
+            <a id="search-item" href="/list">Create List</a>
         </li>
         <li class="divider" tabindex="-1"></li>
         <li>
-            <a id="search-item" href="#!">Tickets</a>
+            <a id="search-item" href="/ticket">Create Ticket</a>
         </li>
         <li class="divider" tabindex="-1"></li>
         <li>
-            <a id="search-item" href="#!">Invoices</a>
+            <a id="search-item" href="/invoice">Create Invoice</a>
         </li>
         <li class="divider" tabindex="-1"></li>
         <li>

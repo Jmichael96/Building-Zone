@@ -1,50 +1,10 @@
 <head>
     <link rel="stylesheet" href="/assets/css/log.css">
 </head>
-    <!-- Navigation & Intro -->
-    <div class="navbar-fixed">
-    <nav>
-        <div class="nav-wrapper">
-            <button id="nav-btn" class="btn sidenav-trigger " data-target="slide-out">menu</button>
-            <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownSearch">
-                Search
-            </button>   
-            <ul class="right">
-                <img id="logo-img" src="/assets/images/blade.jpg">
-            </ul>
-        </div>
-    </nav>
-    </div>
-    {{!-- searchbar options --}}
-    <ul id='dropdownSearch' class='dropdown-content'>
-                        <li>
-                            <a id="search-item" class="" href="">Logs</a>
-                        </li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li>
-                            <a id="search-item" href="#!">Lists</a>
-                        </li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li>
-                            <a id="search-item" href="#!">Tickets</a>
-                        </li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li>
-                            <a id="search-item" href="#!">Invoices</a>
-                        </li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li>
-                            <a id="search-item" href="#!">Help</a>
-                        </li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li>
-                            <a id="search-item" href="#!">About Us</a>
-                        </li>
-                    </ul>
-    <!-- Navbar -->
- <div id="form" class="container">
-<p id="title" class="center-align">Daily Log</p>
-<hr />
+
+<div id="form" class="container">
+    <p id="title" class="center-align">Daily Log</p>
+    <hr />
     <form action="log" method="POST">
         <div class="row">
             <!-- datepicker -->
@@ -95,8 +55,8 @@
             </div>
         </div>
         <button id="submit-log" type="submit" class="btn submit pulse">Save</button>
-<button id="share-log" href="" class="btn share center-align">Share</button>
-<button id="cancel-btn" href="/daily_log" class="btn modal-close">Cancel</button>
+        <button id="share-log" href="" class="btn share center-align">Share</button>
+        <button id="cancel-btn" href="/daily_log" class="btn modal-close">Cancel</button>
 
     </form>
 </div>

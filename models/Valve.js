@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 let ValveSchema = new Schema({
     date: {
-        type: Date,
+        type: String,
     },
     city:{
         type: String,

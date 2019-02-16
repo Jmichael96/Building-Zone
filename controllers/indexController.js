@@ -56,10 +56,6 @@ router.get("/login", sessionChecker, function (req, res) {
     return;
 });
 
-// router.get("/users", isAuthenticated, function(req, res) {
-//     res.render("users");
-// });
-
 router.get("/invoice", (req, res)=>{
     if (req.user) {
         db.User.findOne({ _id: req.user , 
@@ -73,24 +69,10 @@ router.get("/invoice", (req, res)=>{
         })
         // send data to handlebars and render
     } else {
-        res.redirect("/signup")
+        res.redirect("/register")
     }
-    // console.log(req.user);
-    // db.Invoice.find().then((dbInvoice)=>{
-    //     db.User.findOne({
-    //         _id: req.user, 
-    //         raw: true,
-    //     })
-    //     .then((dbUser) =>{
-    //         res.render("invoice", {
-    //             loginStatus: true,
-    //             data: dbInvoice, dbUser,
-    //             User: req.user,
-    //         });
-    //         console.log();
-    //     });    
-    // })
 });
+
 router.get("/daily_log", (req, res)=>{
     res.render("log")
 });

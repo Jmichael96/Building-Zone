@@ -5,7 +5,7 @@ let Schema = mongoose.Schema;
 
 let InvoiceSchema = new Schema({
     date:{
-        type: Date,
+        type: String,
     },
     invoice_num:{
         type: String,

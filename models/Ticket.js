@@ -5,8 +5,7 @@ var Schema = mongoose.Schema;
 
 let TicketSchema = new Schema({
     date: {
-        type: Date,
-        default: Date.now,
+        type: String,
     },
     company:{
         type: String,

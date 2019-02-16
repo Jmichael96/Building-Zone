@@ -1,9 +1,3 @@
-body{
-    background-image: url("/assets/images/alllogsbg.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-}
 #page-title{
     font-weight: 800;
     font-size: 80px;
@@ -11,56 +5,73 @@ body{
     text-shadow: 0 1px 8px rgb(255, 255, 255);
     padding: 5px;
 }
-#collapsible{
-    background-color: rgb(41, 41, 41);
-    border: 1px solid black;
+#modal-btn{
+    width: 425px;
 }
+#body-dividers{
+    color: black;
+    background-color: black;
+}
+/* button title for date */
 #date{
     font-size: 13px;
     color: black;
     font-weight: 400;
 }
-#header{
-    background-color: rgb(90, 0, 0);
-    color: rgb(126, 126, 126);
-}
-#collapsible-body{
-    background-color: rgb(90, 0, 0);
-    border: 1px solid black;
-    color: white;
-}
+/* titles for all text fields */
 #modal-titles{
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 900;
     color: white;
+    margin: 30px 13px 0 0;
+}
+p{
+    font-size: 15px;
 }
 /* title for the update section */
 #title-update{
     font-size: 40px;
-    margin: 10px;
+    margin: 40px 0 10px 0;
     color: white;
 }
+input{
+    color: white;
+}
+/* valid color */
+.input-field input[type=text].valid {
+    border-bottom: 1px solid #ffffff;
+    color: white;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid rgb(148, 0, 0);
+    box-shadow: 0 1px 0 0 rgb(146, 0, 0);
+    color: rgb(255, 0, 0);
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;    
+}
+/* modal button */
 .btn-large{
     background-color: rgb(90, 0, 0);
     color: white;
     box-shadow: 0 3px 10px black, 0 4px 15px black;
 }
- .btn-large:hover{
+.btn-large:hover{
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     box-shadow: 0 3px 10px rgb(0, 0, 0), 0 4px 15px rgb(0, 0, 0), 0 6px 20px black, 0 8px 25px black;
 }
+/* delete one section */
 #delete-one{
     background-color: rgb(0, 0, 0);
     color: rgb(255, 0, 0);
     box-shadow: 0 1px 10px black;
-
 }
 #delete-one:hover{
     background-color: rgb(255, 255, 255);
     color: rgb(255, 0, 0);
     box-shadow: 0 3px 10px black, 0 4px 15px black;
 }
+/* delete all button */
 #clearall{
     background-color: rgb(0, 0, 0);
     color: rgb(255, 0, 0);
@@ -71,14 +82,7 @@ body{
     color: rgb(255, 0, 0);
     box-shadow: 0 3px 10px black, 0 4px 15px black;
 }
-
-#form{
-    background-color: rgba(0, 0, 0, 0.582);
-    margin-bottom: 80px;
-    box-shadow: 0 4px 10px black, 0 5px 15px black, 0 6px 20px black;
-    border-radius: 4px;
-}
-
+/* update button */
 #submit-log{
     background-color: white;;
     color: rgb(90, 0, 0);

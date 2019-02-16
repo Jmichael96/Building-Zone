@@ -8,8 +8,7 @@ let ListSchema = new Schema({
         type: String
     },
     date:{
-        type: Date,
-        default: Date.now,
+        type: String,
     },
     list_1:{
         type: String

@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 let DocumentSchema = new Schema({
     date: {
-        type: Date,
+        type: String,
     },
     name:{
         type: String,

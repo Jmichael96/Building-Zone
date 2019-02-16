@@ -1,23 +1,24 @@
 <head>
     <link rel="stylesheet" href="/assets/css/logs.css">
 </head>
-    
-    <a href="clear-logs" class="btn btn-outline-danger" id="clearall" role="button" aria-disabled="true">Delete all</a>
+
+<a href="clear-logs" class="btn btn-outline-danger" id="clearall" role="button" aria-disabled="true">Delete all</a>
 
 <div class="container">
     <p id="page-title" class="center-align">ALL Documents</p>
 </div>
 {{#each Document}}
 <div class="row col s12">
-    <div class="col s2 m2 l3"></div>
-    <!-- Modal Trigger -->
-    <div class="col">
-        <a href="/delete-log/{{id}}" class="btn btn-outline-danger" id="delete-one" role="button" aria-disabled="true">X</a>
-        <a id="modal-btn" class="btn-large modal-trigger" href="#{{_id}}">
-            <b>{{name}}</b>
-            <b id="date"> Date:</b> {{date}}</a>
+    <div class="col s2 m2 l4"> <a href="/delete-document/{{id}}" class="btn btn-outline-danger" id="delete-one" role="button"
+            aria-disabled="true">X</a>
     </div>
-    <div class="col s2 m2 l2"></div>
+    <!-- Modal Trigger -->
+    <div class="col l4">
+        <a id="modal-btn" class="btn-large modal-trigger" href="#{{_id}}">
+            <b class="left">{{name}}</b>
+            <b id="date" class="right">{{date}}</b></a>
+    </div>
+    <div class="col s2 m2 l4"></div>
 </div>
 <!-- Modal Structure -->
 <div id="{{_id}}" class="modal">

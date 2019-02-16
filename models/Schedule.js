@@ -5,12 +5,10 @@ var Schema = mongoose.Schema;
 
 let ScheduleSchema = new Schema({
     from_date: {
-        type: Date,
-        default: Date.now,
+        type: String,
     },
     to_date: {
-        type: Date,
-        default: Date.now,
+        type: String,
     },
     description: {
         type: String,

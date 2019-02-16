@@ -26,7 +26,6 @@ router.get("/alllogs", (req, res) => {
             console.log("error loading alllogs page " + err);
         })
 })
-
 // deleting a single log
 router.get("/delete-log/:id", function (req, res) {
     // Use the article id to find and update its saved boolean

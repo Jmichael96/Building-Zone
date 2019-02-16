@@ -1,3 +1,4 @@
+/* creating document  */
 #title{
     font-size: 50px;
     font-weight: 800;
@@ -10,4 +11,8 @@
     margin-bottom: 80px;
     box-shadow: 0 4px 10px black, 0 5px 15px black, 0 6px 20px black;
     border-radius: 4px;
+}
+/* all documents css */
+#modal-btn{
+    width: 425px;
 }

@@ -29,8 +29,15 @@ router.get("/alldocuments", (req, res) => {
             });
         });
 });
-
-
+// deleting a single document
+router.get("/delete-document/:id", function (req, res) {
+    // Use the article id to find and update its saved boolean
+    db.Document.findOneAndDelete({ "_id": req.params.id })
+        .then(function (doc) {
+            console.log(doc);
+            res.redirect("/alldocuments");
+        });
+});
 router.get("/find/:id", (req, res) => {
     db.Document.findOne(
         {

@@ -1,6 +1,7 @@
 let express = require('express');
 let router = express.Router();
 let db = require('../models');
+
 // creating a new invoice
 router.post("/invoice", (req, res) =>{
     console.log(req.body)

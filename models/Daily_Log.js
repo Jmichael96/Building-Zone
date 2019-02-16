@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 
 let Daily_LogSchema = new Schema({
     date: {
-        type: Date,
+        type: String,
     },
     job_title:{
         type: String,

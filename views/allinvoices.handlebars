@@ -8,13 +8,14 @@
 </div>
 {{#each Invoice}}
 <div class="row col s12">
-    <div class="col s2 m2 l2"></div>
+    <div class="col s2 m2 l2"> <a href="/delete-invoice/{{id}}" class="btn btn-outline-danger" id="delete-one" role="button"
+            aria-disabled="true">X</a>
+    </div>
     <!-- Modal Trigger -->
-    <div class="col">
-        <a href="/delete-invoice/{{id}}" class="btn btn-outline-danger" id="delete-one" role="button" aria-disabled="true">X</a>
+    <div class="col l4">
         <a id="modal-btn" class="btn-large modal-trigger" href="#{{_id}}">
-            <b id="billed-to">Billed To:</b> {{bill_to}}
-            <b id="date">Date:</b>{{date}}</a>
+            <b id="billed-to" class="left">Billed To: {{bill_to}}</b>
+            <b id="date" class="right">{{date}}</b></a>
     </div>
     <div class="col s2 m2 l2"></div>
 </div>
@@ -128,22 +129,25 @@
                 <div class="row">
                     <!-- job description -->
                     <div class="input-field col s4">
-                        <input id="materials-used" value="{{materials_used}}" type="text" name="materials_used" class="validate" placeholder="">
+                        <input id="materials-used" value="{{materials_used}}" type="text" name="materials_used" class="validate"
+                            placeholder="">
                         <label class="active white-text" for="materials-used">Materials Used</label>
                     </div>
                     <div class="input-field col s4">
-                        <input id="equipment-used" value="{{equipment_used}}" type="text" name="equipment_used" class="validate" placeholder="">
+                        <input id="equipment-used" value="{{equipment_used}}" type="text" name="equipment_used" class="validate"
+                            placeholder="">
                         <label class="active white-text" for="equipment-used">Equipment Used</label>
                     </div>
                     <div class="input-field col s4">
-                        <input id="days-on-job" type="text" value="{{days_on_job}}" name="days_on_job" class="validate" placeholder="">
+                        <input id="days-on-job" type="text" value="{{days_on_job}}" name="days_on_job" class="validate"
+                            placeholder="">
                         <label class="active white-text" for="days-on-job">Days On Site</label>
                     </div>
                 </div>
                 <!-- LIST OF ITEMS - QTY - PRICE -->
                 <div class="row">
                     <div class="input-field col s2 ">
-                        <input value="{{item_1}}" id="job-item1"  type="text" name="item_1" class="validate" placeholder="">
+                        <input value="{{item_1}}" id="job-item1" type="text" name="item_1" class="validate" placeholder="">
                         <label class="active white-text" for="job-item1">Job Items</label>
                     </div>
                     <div class="input-field col s2 ">
@@ -223,7 +227,7 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="other-job-items" value="{{other_job_items}}" class="validate" name="other_job_items" 
+                        <input id="other-job-items" value="{{other_job_items}}" class="validate" name="other_job_items"
                             rows="5">
                         <label class="white-text" for="other_items">Other Job Items</label>
                     </div>
@@ -232,8 +236,8 @@
                 <!-- FINALIZING WITH TOTAL $ PO AND MUD DISTRICT -->
                 <div class="row">
                     <div class="input-field col s4 ">
-                        <input value="{{total_item_price}}" id="total-item-price" name="total_item_price" type="text" class="validate"
-                            placeholder="">
+                        <input value="{{total_item_price}}" id="total-item-price" name="total_item_price" type="text"
+                            class="validate" placeholder="">
                         <label class="active white-text" for="total-item-price">Total Item Price</label>
                     </div>
                     <div class="input-field col s4 ">
@@ -241,18 +245,21 @@
                         <label class="active white-text" for="po-num">PO #</label>
                     </div>
                     <div class="input-field col s4 ">
-                        <input value="{{mud_district}}" id="mud-district" name="mud_district" type="text" class="validate" placeholder="">
+                        <input value="{{mud_district}}" id="mud-district" name="mud_district" type="text" class="validate"
+                            placeholder="">
                         <label class="active white-text" for="mud-district">MUD District</label>
                     </div>
                 </div>
                 <!--  -->
                 <div class="row">
                     <div class="input-field col s4">
-                        <input value="{{terms}}" id="payment-terms" name="terms" type="text" class="validate" placeholder="Due On Reciept">
+                        <input value="{{terms}}" id="payment-terms" name="terms" type="text" class="validate"
+                            placeholder="Due On Reciept">
                         <label class="active white-text" for="payment-terms">Terms of Payment</label>
                     </div>
                     <div class="input-field col s3">
-                        <input value="{{sub_total}}" id="sub-total" name="sub_total" type="text" class="validate" placeholder="">
+                        <input value="{{sub_total}}" id="sub-total" name="sub_total" type="text" class="validate"
+                            placeholder="">
                         <label class="active white-text" for="sub-total">Sub Total</label>
                     </div>
                     <div class="input-field col s3">
@@ -263,12 +270,14 @@
                 <div class="row">
                     <!-- total sum -->
                     <div class="input-field col s4 ">
-                        <input value="{{total_hours}}" id="total-hours" name="total_hours" type="text" class="validate" placeholder="">
+                        <input value="{{total_hours}}" id="total-hours" name="total_hours" type="text" class="validate"
+                            placeholder="">
                         <label class="active white-text" for="total-hours">Total Hours</label>
                     </div>
                     <!-- total sum -->
                     <div class="input-field col s4 ">
-                        <input value="{{total_due}}" id="total-due" name="total_due" type="text" class="validate" placeholder="">
+                        <input value="{{total_due}}" id="total-due" name="total_due" type="text" class="validate"
+                            placeholder="">
                         <label class="active white-text" for="total-due">Total Due</label>
                     </div>
                 </div>
