@@ -28,15 +28,15 @@
         <nav>
             <div class="nav-wrapper">
                 <button id="nav-btn" class="btn sidenav-trigger " data-target="slide-out">menu</button>
-                <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownCreate">
-                    Quick Create
-                </button>
                 {{!-- if user isnt logged in --}}
                 {{#unless loginStatus}}
                 <a href="/register"><button id="nav-btn" class="btn z-depth-5">Sign Up</button></a>
                 <a href="/login"><button id="nav-btn" class="btn z-depth-5">Login</button></a>
                 {{/unless}}
                 {{#if loginStatus}}
+                <button href="" id="nav-btn" class="dropdown-trigger btn" data-target="dropdownCreate">
+                    Quick Create
+                </button>
                 <span>Welcome {{User.username}}!</span>
                 {{/if}}
                 <ul class="right">
