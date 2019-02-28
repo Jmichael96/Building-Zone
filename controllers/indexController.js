@@ -74,31 +74,135 @@ router.get("/invoice", (req, res)=>{
 });
 
 router.get("/daily_log", (req, res)=>{
-    res.render("log")
+    if (req.user) {
+        db.User.findOne({ _id: req.user , 
+            raw: true
+        }).then(function (dbUser) {
+            res.render("log", {
+                loginStatus: true, 
+                User: req.user
+            });
+            console.log("welcome " + req.user);
+        })
+        // send data to handlebars and render
+    } else {
+        res.redirect("/register")
+    }
 });
 router.get("/list", (req, res)=>{
-    res.render("list");
+    if (req.user) {
+        db.User.findOne({ _id: req.user , 
+            raw: true
+        }).then(function (dbUser) {
+            res.render("list", {
+                loginStatus: true, 
+                User: req.user
+            });
+            console.log("welcome " + req.user);
+        })
+        // send data to handlebars and render
+    } else {
+        res.redirect("/register")
+    }
 });
 router.get("/ticket", (req, res)=>{
-    res.render("ticket");
+    if (req.user) {
+        db.User.findOne({ _id: req.user , 
+            raw: true
+        }).then(function (dbUser) {
+            res.render("ticket", {
+                loginStatus: true, 
+                User: req.user
+            });
+            console.log("welcome " + req.user);
+        })
+        // send data to handlebars and render
+    } else {
+        res.redirect("/register")
+    }
 });
 router.get("/scheduler", (req, res)=>{
-    res.render("scheduler");
+    if (req.user) {
+        db.User.findOne({ _id: req.user , 
+            raw: true
+        }).then(function (dbUser) {
+            res.render("scheduler", {
+                loginStatus: true, 
+                User: req.user
+            });
+            console.log("welcome " + req.user);
+        })
+        // send data to handlebars and render
+    } else {
+        res.redirect("/register")
+    }
 });
 router.get("/document", (req, res) =>{
-    res.render("document");
+    if (req.user) {
+        db.User.findOne({ _id: req.user , 
+            raw: true
+        }).then(function (dbUser) {
+            res.render("document", {
+                loginStatus: true, 
+                User: req.user
+            });
+            console.log("welcome " + req.user);
+        })
+        // send data to handlebars and render
+    } else {
+        res.redirect("/register")
+    }
 });
 router.get("/valve", (req, res) =>{
-    res.render("valveSheet");
+    if (req.user) {
+        db.User.findOne({ _id: req.user , 
+            raw: true
+        }).then(function (dbUser) {
+            res.render("valveSheet", {
+                loginStatus: true, 
+                User: req.user
+            });
+            console.log("welcome " + req.user);
+        })
+        // send data to handlebars and render
+    } else {
+        res.redirect("/register")
+    }
 });
 router.get("/locates", (req, res) =>{
-    res.render("locates");
+    if (req.user) {
+        db.User.findOne({ _id: req.user , 
+            raw: true
+        }).then(function (dbUser) {
+            res.render("locates", {
+                loginStatus: true, 
+                User: req.user
+            });
+            console.log("welcome " + req.user);
+        })
+        // send data to handlebars and render
+    } else {
+        res.redirect("/register")
+    }
 });
 router.get("/image", (req, res) =>{
     res.render("img");
 });
 router.get("/saved", (req, res) =>{
-    res.render("saved");
+    if (req.user) {
+        db.User.findOne({ _id: req.user , 
+            raw: true
+        }).then(function (dbUser) {
+            res.render("saved", {
+                loginStatus: true, 
+                User: req.user
+            });
+            console.log("welcome " + req.user);
+        })
+        // send data to handlebars and render
+    } else {
+        res.redirect("/register")
+    }
 });
 
 module.exports = router;
