@@ -19,6 +19,9 @@ h3 {
     color: white;
     font-size: 20px;
 }
+.form-group input {
+    color: white;
+}
 /* submit button */
 #loginBtn {
     background-color: rgb(90, 0, 0);
