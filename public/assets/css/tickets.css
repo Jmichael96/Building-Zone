@@ -47,7 +47,7 @@
     color: white;
     box-shadow: 0 3px 10px black, 0 4px 15px black;
 }
- .btn-large:hover{
+.btn-large:hover{
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     box-shadow: 0 3px 10px rgb(0, 0, 0), 0 4px 15px rgb(0, 0, 0), 0 6px 20px black, 0 8px 25px black;

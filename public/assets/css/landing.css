@@ -1,8 +1,20 @@
 .card {
     color: white;
     background-color: rgba(0, 0, 0, 0.884);
+    background-image: url("../images/sheetmetal.jpg");
+    background-position: center;
+    background-attachment: fixed;
     border-radius: 5px;
+    box-shadow: 0 3px 8px black;
 }
 #item {
     background-color: rgba(0, 0, 0, 0);
+}
+.card .card-title{
+    font-weight: 800;
+    text-shadow: 0 2px 8px black;
+}
+.card p{
+    font-size: 17px;
+    text-shadow: 0 1px 8px black;
 }

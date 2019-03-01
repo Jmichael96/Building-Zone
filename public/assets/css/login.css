@@ -1,0 +1,38 @@
+/* style of the login card */
+.card {
+    height: 25rem;
+    background-color: rgba(0, 0, 0, 0.274);
+    background-image: url("/assets/images/navbg2.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    box-shadow: 0 3px 8px black, 0 3px 12px black, 0 4px 20px black;
+    padding: 0 10px 0 10px;
+}
+/* title of card 'login' */
+h3 {
+    color: white;
+    font-weight: 800;
+    text-shadow: 0 3px 5px black;
+}
+/* label of the input boxes */
+.form-group label {
+    color: white;
+    font-size: 20px;
+}
+/* submit button */
+#loginBtn {
+    background-color: rgb(90, 0, 0);
+    color: white;
+    box-shadow: 0 3px 10px black, 0 4px 15px black;
+}
+#loginBtn:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 3px 10px rgb(0, 0, 0), 0 4px 15px rgb(0, 0, 0), 0 6px 20px black, 0 8px 25px black;
+
+}
+/* signup option located at bottom of card */
+p {
+    color: white;
+    font-size: 17px;
+}
